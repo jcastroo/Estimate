@@ -1,3 +1,4 @@
+
 <template>
   <div>
     <div class="mt-6 flex flex-col">
@@ -20,7 +21,7 @@ export default {
   components: { OpenFormFooter },
   layout: 'default',
   mixins: [SeoMeta],
-  
+
   data: () => ({
     metaTitle: 'Terms & Conditions',
   }),

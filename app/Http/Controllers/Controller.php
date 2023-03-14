@@ -24,4 +24,11 @@ class Controller extends BaseController
             'type' => 'error'
         ], $data), $statusCode);
     }
+
+    public function myControllerMethod()
+    {
+        // Your controller logic here
+
+        return redirect('/custom');
+    }
 }

@@ -13,7 +13,7 @@ export default {
     uppercaseLabels: { type: Boolean, default: false },
     help: { type: String, default: null }, // Show help or bot
     theme: { type: Object, default: () => themes.default },
-    color: { type: String, default: '#3B82F6' },
+    color: { type: String, default: '#9D00FF' },
     wrapperClass: { type: String, default: 'relative mb-3' }
   },
 

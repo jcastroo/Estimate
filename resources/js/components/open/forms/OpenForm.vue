@@ -71,7 +71,7 @@ const VueHcaptcha = () => import('@hcaptcha/vue-hcaptcha')
 import FormPendingSubmissionKey from '../../../mixins/forms/form-pending-submission-key.js'
 
 export default {
-  name: 'OpenForm',
+  name: 'Estimate',
   components: {OpenFormButton, VueHcaptcha},
   mixins: [FormPendingSubmissionKey],
   props: {

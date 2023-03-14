@@ -3,12 +3,12 @@
     <div class="grid md:grid-cols-3 my-8">
       <div class="flex mt-2">
         <p class="text-sm text-gray-600 dark:text-gray-400 text-center w-full">
-          © Copyright 2022. All Rights Reserved
+          Setup Tech © Copyright 2022. All Rights Reserved
         </p>
       </div>
       <div class="flex justify-center mt-5 md:mt-0">
         <router-link :to="{ name: user ? 'home' : 'welcome' }" class="flex-shrink-0 font-semibold flex items-center">
-          <img :src="asset('img/logo.svg')" alt="notion tools logo" class="w-10 h-10">
+          <img :src="asset('img/logo.png')" alt="notion tools logo" class="w-15 h-10">
           <span class="ml-2 text-xl text-black dark:text-white">
             {{ appName }}
           </span>

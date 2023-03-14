@@ -23,7 +23,7 @@
 
   @vite('resources/js/app.js')
 
-  <link rel="icon" href="{{asset('/img/logo.svg')}}">
+  <link rel="icon" href="{{asset('/img/logob.png')}}">
 
   @if($meta)
     <title>{{$meta['title']}}</title>

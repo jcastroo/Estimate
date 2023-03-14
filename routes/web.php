@@ -23,3 +23,5 @@ Route::post(
     [\App\Http\Controllers\Content\SignedStorageUrlController::class, 'store']
 )->middleware([]);
 Route::get('/sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'getSitemap'])->name('sitemap');
+
+

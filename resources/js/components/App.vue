@@ -16,7 +16,7 @@
     >
       <div v-if="announcement && !isIframe" class="bg-nt-blue text-white text-center p-3 relative">
         <a class="text-white font-semibold" href="" target="_blank">🚨
-          OpnForm beta is over 🚨</a>
+          Estimate beta is over 🚨</a>
         <div role="button" class="text-white absolute right-0 top-0 p-3 cursor-pointer" @click="announcement=false">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
             <path fill-rule="evenodd"
@@ -73,7 +73,7 @@ export default {
   mixins: [SeoMeta],
 
   data: () => ({
-    metaTitle: 'OpnForm',
+    metaTitle: 'Estimate',
     metaDescription: 'Create beautiful forms for free. Unlimited fields, unlimited submissions. It\'s free and it takes less than 1 minute to create your first form.',
     layout: null,
     defaultLayout: 'default',

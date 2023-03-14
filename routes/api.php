@@ -83,6 +83,10 @@ Route::group(['middleware' => 'auth:api'], function () {
             Route::get('/{id}/submissions', [FormSubmissionController::class, 'submissions'])->name('submissions');
             Route::get('/{id}/submissions/export', [FormSubmissionController::class, 'export'])->name('submissions.export');
             Route::get('/{id}/submissions/file/{filename}', [FormSubmissionController::class, 'submissionFile'])->name('submissions.file');
+
+        
+
+
             // Form Admin tool
             Route::put('/{id}/regenerate-link/{option}',
                 [FormController::class, 'regenerateLink'])
@@ -152,6 +156,7 @@ Route::prefix('forms')->name('forms.')->group(function () {
 Route::prefix('content')->name('content.')->group(function () {
     Route::get('changelog/entries', [\App\Http\Controllers\Content\ChangelogController::class, 'index'])->name('changelog.entries');
 });
+
 
 // Templates
 Route::get('templates', [TemplateController::class, 'index'])->name('templates.show');

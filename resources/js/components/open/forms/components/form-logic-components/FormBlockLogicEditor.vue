@@ -114,7 +114,9 @@ export default {
       if (this.field.hidden) {
         return [
           {name: 'Show Block', value: 'show-block'},
-          {name: 'Require answer', value: 'require-answer'}
+          {name: 'Require answer', value: 'require-answer'},
+          {name: 'Price', value: 'price'}
+
         ]
       } else {
         return [

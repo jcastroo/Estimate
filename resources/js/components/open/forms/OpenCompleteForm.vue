@@ -98,10 +98,10 @@
           </template>
         </open-form>
         <p v-if="!form.no_branding" class="text-center w-full mt-2">
-          <a href="https://opnform.com?utm_source=form&utm_content=powered_by"
+          <a href="https://setup.technology/"
              class="text-gray-400 hover:text-gray-500 dark:text-gray-600 dark:hover:text-gray-500 cursor-pointer hover:underline text-xs"
              target="_blank"
-          >Powered by <span class="font-semibold">OpnForm</span></a>
+          >Powered by <span class="font-semibold">Setup Tech</span></a>
         </p>
       </div>
       <div v-else key="submitted" class="px-2">
@@ -113,7 +113,7 @@
           <a target="_parent" :href="form.share_url+'?submission_id='+submissionId" class="text-nt-blue hover:underline">Edit submission</a>
         </p>
         <p v-if="!form.no_branding" class="mt-5">
-          <a target="_parent" href="https://opnform.com/?utm_source=form&utm_content=create_form_free" class="text-nt-blue hover:underline">Create your form for free with OpnForm</a>
+          <a target="_parent" href="https://opnform.com/?utm_source=form&utm_content=create_form_free" class="text-nt-blue hover:underline">Create your form for free with Estimate</a>
         </p>
       </div>
     </transition>

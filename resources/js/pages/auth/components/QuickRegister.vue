@@ -8,7 +8,7 @@
         </svg>
       </template>
       <template #title>
-        Login to OpnForm
+        Login to SetupEstimate
       </template>
       <div class="px-4">
         <login-form :isQuick="true" @openRegister="openRegister" @afterQuickLogin="afterQuickLogin" />
