@@ -39,7 +39,7 @@ export default defineConfig({
 
 module.exports = {
   build: {
-    outDir: 'dev'
+    outDir: 'resources'
   }
 }
 
