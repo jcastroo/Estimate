@@ -20,7 +20,7 @@
 
   <link rel="icon" href="{{asset('/img/logob.png')}}">
 
-  <title>ola mundo</title>
+  <title>Setup Estimate</title>
 </head>
 <body>
 <div id="app"></div>
