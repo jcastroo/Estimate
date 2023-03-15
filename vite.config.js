@@ -36,7 +36,8 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-        input: 'resources/views/index.html',
+        input: 'resources/js/pages/welcome.vue',
+
         external: ['resources/js/app.js']
       }
   }
