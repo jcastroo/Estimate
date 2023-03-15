@@ -35,10 +35,11 @@ export default defineConfig({
     }
   },
   build: {
-    rollupOptions: {
-        input: 'resources/js/pages/welcome.vue',
+    outDir: 'public',
 
-        external: ['resources/js/app.js']
+    rollupOptions: {
+        input: 'resources/views/index.html',
+        external: ['resources/js/app.js'],
       }
   }
 })
