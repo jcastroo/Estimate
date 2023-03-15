@@ -1,0 +1,662 @@
+{
+  "resources/js/components/open/forms/components/FormEditor.css": {
+    "file": "assets/FormEditor-445c3626.css",
+    "src": "resources/js/components/open/forms/components/FormEditor.css"
+  },
+  "resources/js/components/forms/RichTextAreaInput.css": {
+    "file": "assets/RichTextAreaInput-cd8fb183.css",
+    "src": "resources/js/components/forms/RichTextAreaInput.css"
+  },
+  "OpenCompleteForm.css": {
+    "file": "assets/OpenCompleteForm-101e1300.css",
+    "src": "OpenCompleteForm.css"
+  },
+  "resources/js/pages/forms/show/submissions.css": {
+    "file": "assets/submissions-d82c1d3e.css",
+    "src": "resources/js/pages/forms/show/submissions.css"
+  },
+  "resources/js/pages/welcome.css": {
+    "file": "assets/welcome-d4a4ea9f.css",
+    "src": "resources/js/pages/welcome.css"
+  },
+  "VTransition.css": {
+    "file": "assets/VTransition-f03282f6.css",
+    "src": "VTransition.css"
+  },
+  "resources/js/components/open/NotionPage.css": {
+    "file": "assets/NotionPage-e3168eb5.css",
+    "src": "resources/js/components/open/NotionPage.css"
+  },
+  "resources/js/pages/integrations.css": {
+    "file": "assets/integrations-e1d5be50.css",
+    "src": "resources/js/pages/integrations.css"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-7b784c10.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/pages/auth/components/RegisterForm.vue": {
+    "file": "assets/RegisterForm-f9156ff6.js",
+    "src": "resources/js/pages/auth/components/RegisterForm.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/forms/edit.vue": {
+    "file": "assets/edit-d2556aa7.js",
+    "src": "resources/js/pages/forms/edit.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_Breadcrumb-0b41afba.js",
+      "_vform.es-21186655.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/legal-help/privacy-policy.vue": {
+    "file": "assets/privacy-policy-2fe01b5f.js",
+    "src": "resources/js/pages/legal-help/privacy-policy.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_OpenFormFooter-d382f0e8.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/auth/login.vue": {
+    "file": "assets/login-9a912877.js",
+    "src": "resources/js/pages/auth/login.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_OpenFormFooter-d382f0e8.js",
+      "_Testimonials-8b29dc83.js",
+      "resources/js/pages/auth/components/LoginForm.vue",
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "resources/js/pages/auth/ForgotPasswordModal.vue",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "_Testimonials-8b29dc83.js": {
+    "file": "assets/Testimonials-8b29dc83.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "__commonjsHelpers-53f7dec1.js": {
+    "file": "assets/_commonjsHelpers-53f7dec1.js"
+  },
+  "_Collapse-c37968ba.js": {
+    "file": "assets/Collapse-c37968ba.js",
+    "imports": [
+      "_VTransition-40ffac98.js",
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/auth/ForgotPasswordModal.vue": {
+    "file": "assets/ForgotPasswordModal-b0490e56.js",
+    "src": "resources/js/pages/auth/ForgotPasswordModal.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/subscriptions/success.vue": {
+    "file": "assets/success-ab7717f5.js",
+    "src": "resources/js/pages/subscriptions/success.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/templates/show.vue": {
+    "file": "assets/show-e1bd6bfc.js",
+    "src": "resources/js/pages/templates/show.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "_OpenCompleteForm-edbb76b0.js",
+      "_Breadcrumb-0b41afba.js",
+      "__commonjsHelpers-53f7dec1.js",
+      "_VTransition-40ffac98.js",
+      "_index-66fb023c.js"
+    ]
+  },
+  "resources/js/pages/community/students-academics-ngos.vue": {
+    "file": "assets/students-academics-ngos-585c8d5b.js",
+    "src": "resources/js/pages/community/students-academics-ngos.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_OpenFormFooter-d382f0e8.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/components/forms/DateInput.vue": {
+    "file": "assets/DateInput-28d2fc87.js",
+    "src": "resources/js/components/forms/DateInput.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/settings/admin.vue": {
+    "file": "assets/admin-0193833a.js",
+    "src": "resources/js/pages/settings/admin.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/auth/verification/verify.vue": {
+    "file": "assets/verify-09d3f7fa.js",
+    "src": "resources/js/pages/auth/verification/verify.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/subscriptions/error.vue": {
+    "file": "assets/error-d7d0155e.js",
+    "src": "resources/js/pages/subscriptions/error.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/forms/create-guest.vue": {
+    "file": "assets/create-guest-49a74d55.js",
+    "src": "resources/js/pages/forms/create-guest.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "resources/js/pages/auth/components/QuickRegister.vue",
+      "_initForm-d654b046.js",
+      "__commonjsHelpers-53f7dec1.js",
+      "resources/js/pages/auth/components/LoginForm.vue",
+      "_OpenFormFooter-d382f0e8.js",
+      "_Testimonials-8b29dc83.js",
+      "resources/js/pages/auth/ForgotPasswordModal.vue",
+      "resources/js/pages/auth/components/RegisterForm.vue"
+    ]
+  },
+  "resources/js/pages/forms/show/index.vue": {
+    "file": "assets/index-ce850da3.js",
+    "src": "resources/js/pages/forms/show/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "_ProTag-edb3b5aa.js",
+      "_ExtraMenu-289c3aac.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "_OpenFormFooter-d382f0e8.js": {
+    "file": "assets/OpenFormFooter-d382f0e8.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/home.vue": {
+    "file": "assets/home-79ccac7c.js",
+    "src": "resources/js/pages/home.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "_ExtraMenu-289c3aac.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/templates/templates.vue": {
+    "file": "assets/templates-fb84df4b.js",
+    "src": "resources/js/pages/templates/templates.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/forms/create.vue": {
+    "file": "assets/create-86cbbdbf.js",
+    "src": "resources/js/pages/forms/create.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "_initForm-d654b046.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/forms/show/submissions.vue": {
+    "file": "assets/submissions-a926e464.js",
+    "src": "resources/js/pages/forms/show/submissions.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_index-66fb023c.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ],
+    "css": [
+      "assets/submissions-d82c1d3e.css"
+    ]
+  },
+  "_OpenCompleteForm-edbb76b0.js": {
+    "file": "assets/OpenCompleteForm-edbb76b0.js",
+    "imports": [
+      "_vform.es-21186655.js",
+      "_VTransition-40ffac98.js",
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/OpenCompleteForm-101e1300.css"
+    ]
+  },
+  "resources/js/pages/settings/account.vue": {
+    "file": "assets/account-99e56760.js",
+    "src": "resources/js/pages/settings/account.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/welcome.vue": {
+    "file": "assets/welcome-89376e75.js",
+    "src": "resources/js/pages/welcome.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "_Testimonials-8b29dc83.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ],
+    "css": [
+      "assets/welcome-d4a4ea9f.css"
+    ]
+  },
+  "resources/js/pages/auth/components/LoginForm.vue": {
+    "file": "assets/LoginForm-8aab30d4.js",
+    "src": "resources/js/pages/auth/components/LoginForm.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "_Testimonials-8b29dc83.js",
+      "resources/js/pages/auth/ForgotPasswordModal.vue",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/settings/billing.vue": {
+    "file": "assets/billing-50db2f4c.js",
+    "src": "resources/js/pages/settings/billing.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/forms/show/share.vue": {
+    "file": "assets/share-24f02457.js",
+    "src": "resources/js/pages/forms/show/share.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_ProTag-edb3b5aa.js",
+      "_VTransition-40ffac98.js",
+      "_Collapse-c37968ba.js",
+      "__commonjsHelpers-53f7dec1.js",
+      "_vform.es-21186655.js",
+      "_index-66fb023c.js"
+    ]
+  },
+  "resources/js/pages/settings/password.vue": {
+    "file": "assets/password-621091be.js",
+    "src": "resources/js/pages/settings/password.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/components/forms/SignatureInput.vue": {
+    "file": "assets/SignatureInput-da7a3279.js",
+    "src": "resources/js/components/forms/SignatureInput.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/settings/profile.vue": {
+    "file": "assets/profile-23888a2d.js",
+    "src": "resources/js/pages/settings/profile.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "_ExtraMenu-289c3aac.js": {
+    "file": "assets/ExtraMenu-289c3aac.js",
+    "imports": [
+      "resources/js/app.js",
+      "_vform.es-21186655.js"
+    ]
+  },
+  "resources/js/pages/auth/password/email.vue": {
+    "file": "assets/email-0326b52b.js",
+    "src": "resources/js/pages/auth/password/email.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/legal-help/terms-conditions.vue": {
+    "file": "assets/terms-conditions-625475f1.js",
+    "src": "resources/js/pages/legal-help/terms-conditions.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_OpenFormFooter-d382f0e8.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "_vue-hcaptcha.common-9a2c2543.js": {
+    "file": "assets/vue-hcaptcha.common-9a2c2543.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "_initForm-d654b046.js": {
+    "file": "assets/initForm-d654b046.js",
+    "imports": [
+      "_vform.es-21186655.js"
+    ]
+  },
+  "resources/js/pages/auth/components/QuickRegister.vue": {
+    "file": "assets/QuickRegister-31d940d6.js",
+    "src": "resources/js/pages/auth/components/QuickRegister.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/pages/auth/components/LoginForm.vue",
+      "resources/js/pages/auth/components/RegisterForm.vue",
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "_Testimonials-8b29dc83.js",
+      "resources/js/pages/auth/ForgotPasswordModal.vue",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "_Breadcrumb-0b41afba.js": {
+    "file": "assets/Breadcrumb-0b41afba.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/forms/show-public.vue": {
+    "file": "assets/show-public-628cf148.js",
+    "src": "resources/js/pages/forms/show-public.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_OpenCompleteForm-edbb76b0.js",
+      "__commonjsHelpers-53f7dec1.js",
+      "_vform.es-21186655.js",
+      "_VTransition-40ffac98.js",
+      "_index-66fb023c.js"
+    ]
+  },
+  "_ProTag-edb3b5aa.js": {
+    "file": "assets/ProTag-edb3b5aa.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/auth/register.vue": {
+    "file": "assets/register-705fb0fd.js",
+    "src": "resources/js/pages/auth/register.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_OpenFormFooter-d382f0e8.js",
+      "_Testimonials-8b29dc83.js",
+      "resources/js/pages/auth/components/RegisterForm.vue",
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/auth/password/reset.vue": {
+    "file": "assets/reset-e25a8518.js",
+    "src": "resources/js/pages/auth/password/reset.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "_OpenFormFooter-d382f0e8.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "_VTransition-40ffac98.js": {
+    "file": "assets/VTransition-40ffac98.js",
+    "imports": [
+      "resources/js/app.js",
+      "_vform.es-21186655.js",
+      "_index-66fb023c.js"
+    ],
+    "dynamicImports": [
+      "_vue-hcaptcha.common-9a2c2543.js"
+    ],
+    "css": [
+      "assets/VTransition-f03282f6.css"
+    ]
+  },
+  "resources/js/pages/settings/index.vue": {
+    "file": "assets/index-b391e98c.js",
+    "src": "resources/js/pages/settings/index.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/settings/workspace.vue": {
+    "file": "assets/workspace-26d5c243.js",
+    "src": "resources/js/pages/settings/workspace.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/pages/integrations.vue": {
+    "file": "assets/integrations-fd518c5f.js",
+    "src": "resources/js/pages/integrations.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_OpenFormFooter-d382f0e8.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ],
+    "css": [
+      "assets/integrations-e1d5be50.css"
+    ]
+  },
+  "_vform.es-21186655.js": {
+    "file": "assets/vform.es-21186655.js",
+    "imports": [
+      "resources/js/app.js"
+    ]
+  },
+  "resources/js/pages/errors/404.vue": {
+    "file": "assets/404-5cd74445.js",
+    "src": "resources/js/pages/errors/404.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "_index-66fb023c.js": {
+    "file": "assets/index-66fb023c.js"
+  },
+  "resources/js/pages/auth/verification/resend.vue": {
+    "file": "assets/resend-b8ee1944.js",
+    "src": "resources/js/pages/auth/verification/resend.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_vform.es-21186655.js",
+      "resources/js/app.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/components/open/NotionPage.vue": {
+    "file": "assets/NotionPage-6ad4d1c0.js",
+    "src": "resources/js/components/open/NotionPage.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "__commonjsHelpers-53f7dec1.js",
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/NotionPage-e3168eb5.css"
+    ]
+  },
+  "resources/js/components/open/forms/components/FormEditor.vue": {
+    "file": "assets/FormEditor-af4c791a.js",
+    "src": "resources/js/components/open/forms/components/FormEditor.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_Collapse-c37968ba.js",
+      "_index-66fb023c.js",
+      "__commonjsHelpers-53f7dec1.js",
+      "_ProTag-edb3b5aa.js",
+      "_vform.es-21186655.js",
+      "_VTransition-40ffac98.js",
+      "_OpenCompleteForm-edbb76b0.js"
+    ],
+    "dynamicImports": [
+      "resources/js/components/open/forms/components/form-logic-components/FormBlockLogicEditor.vue",
+      "resources/js/components/open/forms/components/form-logic-components/FormBlockLogicEditor.vue"
+    ],
+    "css": [
+      "assets/FormEditor-445c3626.css"
+    ]
+  },
+  "resources/js/components/open/forms/components/form-logic-components/FormBlockLogicEditor.vue": {
+    "file": "assets/FormBlockLogicEditor-1a85c157.js",
+    "src": "resources/js/components/open/forms/components/form-logic-components/FormBlockLogicEditor.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "_ProTag-edb3b5aa.js",
+      "__commonjsHelpers-53f7dec1.js",
+      "resources/js/app.js",
+      "_index-66fb023c.js"
+    ]
+  },
+  "resources/js/components/forms/RichTextAreaInput.vue": {
+    "file": "assets/RichTextAreaInput-ff0724cf.js",
+    "src": "resources/js/components/forms/RichTextAreaInput.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "__commonjsHelpers-53f7dec1.js",
+      "resources/js/app.js"
+    ],
+    "css": [
+      "assets/RichTextAreaInput-cd8fb183.css"
+    ]
+  },
+  "resources/js/pages/forms/show/analytics.vue": {
+    "file": "assets/analytics-e8644a52.js",
+    "src": "resources/js/pages/forms/show/analytics.vue",
+    "isDynamicEntry": true,
+    "imports": [
+      "resources/js/app.js",
+      "_ProTag-edb3b5aa.js",
+      "__commonjsHelpers-53f7dec1.js"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-d7e169b8.js",
+    "src": "resources/js/app.js",
+    "isEntry": true,
+    "imports": [
+      "__commonjsHelpers-53f7dec1.js"
+    ],
+    "dynamicImports": [
+      "resources/js/pages/auth/ForgotPasswordModal.vue",
+      "resources/js/pages/auth/components/LoginForm.vue",
+      "resources/js/pages/auth/components/QuickRegister.vue",
+      "resources/js/pages/auth/components/RegisterForm.vue",
+      "resources/js/pages/auth/login.vue",
+      "resources/js/pages/auth/password/email.vue",
+      "resources/js/pages/auth/password/reset.vue",
+      "resources/js/pages/auth/register.vue",
+      "resources/js/pages/auth/verification/resend.vue",
+      "resources/js/pages/auth/verification/verify.vue",
+      "resources/js/pages/community/students-academics-ngos.vue",
+      "resources/js/pages/errors/404.vue",
+      "resources/js/pages/forms/create-guest.vue",
+      "resources/js/pages/forms/create.vue",
+      "resources/js/pages/forms/edit.vue",
+      "resources/js/pages/forms/show-public.vue",
+      "resources/js/pages/forms/show/analytics.vue",
+      "resources/js/pages/forms/show/index.vue",
+      "resources/js/pages/forms/show/share.vue",
+      "resources/js/pages/forms/show/submissions.vue",
+      "resources/js/pages/home.vue",
+      "resources/js/pages/integrations.vue",
+      "resources/js/pages/legal-help/privacy-policy.vue",
+      "resources/js/pages/legal-help/terms-conditions.vue",
+      "resources/js/pages/settings/account.vue",
+      "resources/js/pages/settings/admin.vue",
+      "resources/js/pages/settings/billing.vue",
+      "resources/js/pages/settings/index.vue",
+      "resources/js/pages/settings/password.vue",
+      "resources/js/pages/settings/profile.vue",
+      "resources/js/pages/settings/workspace.vue",
+      "resources/js/pages/subscriptions/error.vue",
+      "resources/js/pages/subscriptions/success.vue",
+      "resources/js/pages/templates/show.vue",
+      "resources/js/pages/templates/templates.vue",
+      "resources/js/pages/welcome.vue",
+      "resources/js/components/forms/SignatureInput.vue",
+      "resources/js/components/forms/RichTextAreaInput.vue",
+      "resources/js/components/forms/DateInput.vue",
+      "resources/js/components/open/forms/components/FormEditor.vue",
+      "resources/js/components/open/NotionPage.vue"
+    ],
+    "css": [
+      "assets/app-7b784c10.css"
+    ]
+  }
+}
