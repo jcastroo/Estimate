@@ -37,9 +37,14 @@ export default defineConfig({
 })
 
 
+
 module.exports = {
   build: {
-    outDir: 'resources'
+    rollupOptions: {
+      input: {
+        main: './spa.blade.php'
+      }
+    }
   }
 }
 
