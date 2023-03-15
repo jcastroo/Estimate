@@ -33,17 +33,13 @@ export default defineConfig({
       '~': '/resources/js',
       '@': '/resources'
     }
-  }
-})
-
-
-
-module.exports = {
+  },
   build: {
     rollupOptions: {
-        input: 'resources/views/spa.blade.php'
-    }
+        input: 'resources/views/index.html',
+        external: ['resources/js/app.js']
+      }
   }
-}
+})
 
 
