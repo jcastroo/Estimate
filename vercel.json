@@ -6,7 +6,7 @@
     },
     {
       "src": "/",
-      "dest": "/resources/views/index.html"
+      "dest": "/resources/views/spa.blade.php"
     }
   ]
 }

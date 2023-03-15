@@ -36,9 +36,8 @@ export default defineConfig({
   },
   build: {
     outDir: 'public',
-
     rollupOptions: {
-        input: 'resources/views/index.html',
+        input: 'resources/views/spa.blade.php',
         external: ['resources/js/app.js'],
       }
   }
