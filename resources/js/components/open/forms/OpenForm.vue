@@ -1,5 +1,10 @@
 <template>
-  <form v-if="dataForm" @submit.prevent="">
+  <div v-if="isAutoSubmit">
+    <p class="text-center p-4">
+      <loader class="h-6 w-6 text-nt-blue mx-auto" />
+    </p>
+  </div>
+  <form v-else-if="dataForm" @submit.prevent="">
     <transition name="fade" mode="out-in" appear>
       <template v-for="group, groupIndex in fieldGroups">
         <div v-if="currentFieldGroupIndex===groupIndex" :key="groupIndex" class="form-group flex flex-wrap w-full">
@@ -17,9 +22,12 @@
                    class="nf-code w-full px-2 mb-3"
                    v-html="field.content"
               />
-              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id" class="border-b my-4 w-full mx-2"/>
+              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id" 
+                  class="border-b my-4 w-full mx-2"
+              />
               <div v-if="field.type === 'nf-image' && (field.image_block || !isPublicFormPage)" :id="field.id"
-                   :key="field.id" class="my-4 w-full px-2">
+                   :key="field.id" class="my-4 w-full px-2"
+              >
                 <div v-if="!field.image_block" class="p-4 border border-dashed">
                   Open <b>{{ field.name }}'s</b> block settings to upload image.
                 </div>
@@ -105,7 +113,8 @@ export default {
        * Used to force refresh components by changing their keys
        */
       formVersionId: 1,
-      darkModeEnabled: document.body.classList.contains('dark')
+      darkModeEnabled: document.body.classList.contains('dark'),
+      isAutoSubmit: false
     }
   },
 
@@ -242,6 +251,11 @@ export default {
 
   mounted() {
     this.initForm()
+
+    if (window.location.href.includes('auto_submit=true')) {
+      this.isAutoSubmit = true
+      this.submitForm()
+    }
   },
 
   methods: {
@@ -265,6 +279,7 @@ export default {
      * If more than one page, show first page with error
      */
     onSubmissionFailure() {
+      this.isAutoSubmit = false
       if (this.fieldGroups.length > 1) {
         // Find first mistake and show page
         let pageChanged = false
@@ -318,7 +333,21 @@ export default {
           pendingData = null
         }
         if (pendingData !== null && pendingData) {
-          this.dataForm = new Form(JSON.parse(pendingData))
+          pendingData = JSON.parse(pendingData)
+          this.fields.forEach((field) => {
+            if (field.type === 'date' && field.prefill_today === true) { // For Prefill with 'today'
+              const dateObj = new Date()
+              let currentDate = dateObj.getFullYear() + '-' +
+                      String(dateObj.getMonth() + 1).padStart(2, '0') + '-' +
+                      String(dateObj.getDate()).padStart(2, '0')
+              if(field.with_time === true){
+                currentDate += 'T' + String(dateObj.getHours()).padStart(2, '0') + ':' +
+                String(dateObj.getMinutes()).padStart(2, '0');
+              }
+              pendingData[field.id] = currentDate
+            }
+          })
+          this.dataForm = new Form(pendingData)
           return
         }
       }
@@ -355,7 +384,7 @@ export default {
             String(dateObj.getDate()).padStart(2, '0')
           if(field.with_time === true){
             currentDate += 'T' + String(dateObj.getHours()).padStart(2, '0') + ':' +
-            String(dateObj.getMinutes()).padStart(2, '0');
+            String(dateObj.getMinutes()).padStart(2, '0')
           }
           formData[field.id] = currentDate
         } else { // Default prefill if any
@@ -456,17 +485,19 @@ export default {
     },
     previousPage() {
       this.currentFieldGroupIndex -= 1
+      window.scrollTo({ top: 0, behavior: 'smooth' })
       return false
     },
     nextPage() {
       this.currentFieldGroupIndex += 1
+      window.scrollTo({ top: 0, behavior: 'smooth' })
       return false
     }
   }
 }
 </script>
 
-<style lang="scss">
+<style lang='scss'>
 .nf-text {
   ol {
     @apply list-decimal list-inside;
