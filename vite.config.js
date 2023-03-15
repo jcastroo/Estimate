@@ -41,9 +41,7 @@ export default defineConfig({
 module.exports = {
   build: {
     rollupOptions: {
-      input: {
-        main: './spa.blade.php'
-      }
+        input: 'resources/views/spa.blade.php'
     }
   }
 }

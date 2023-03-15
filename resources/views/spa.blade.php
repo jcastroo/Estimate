@@ -25,20 +25,7 @@
 
   <link rel="icon" href="{{asset('/img/logob.png')}}">
 
-  @if($meta)
-    <title>{{$meta['title']}}</title>
-    <meta name='description' content='{{$meta['description']}}'>
-
-    <meta name='og:title' content='{{$meta['title']}}'>
-    <meta name='og:description' content='{{$meta['description']}}'>
-    <meta name='og:image' content='{{$meta['image']}}'>
-    <meta name='og:site_name' content='OpenForm'>
-
-    <meta name="twitter:title" content="{{$meta['title']}}">
-    <meta name="twitter:description" content="{{$meta['description']}}">
-    <meta name="twitter:image" content="{{$meta['image']}}">
-  @endif
-
+  <title>ola mundo</title>
 </head>
 <body>
 <div id="app"></div>
@@ -66,3 +53,4 @@
 
 </body>
 </html>
+
