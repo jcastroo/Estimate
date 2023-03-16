@@ -39,7 +39,10 @@ export default defineConfig({
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of f37accd (s)
 
 module.exports = {
   build: {
@@ -52,4 +55,7 @@ module.exports = {
 }
 
 
+<<<<<<< HEAD
+>>>>>>> parent of f37accd (s)
+=======
 >>>>>>> parent of f37accd (s)

@@ -16,7 +16,11 @@
   ];
 @endphp
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+  <!DOCTYPE html>
+>>>>>>> parent of f37accd (s)
 =======
   <!DOCTYPE html>
 >>>>>>> parent of f37accd (s)
@@ -30,8 +34,11 @@
   <link rel="icon" href="{{asset('/img/logob.png')}}">
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>ola mundo</title>
 =======
+=======
+>>>>>>> parent of f37accd (s)
   @if($meta)
     <title>{{$meta['title']}}</title>
     <meta name='description' content='{{$meta['description']}}'>
@@ -46,6 +53,9 @@
     <meta name="twitter:image" content="{{$meta['image']}}">
   @endif
 
+<<<<<<< HEAD
+>>>>>>> parent of f37accd (s)
+=======
 >>>>>>> parent of f37accd (s)
 </head>
 <body>
@@ -59,12 +69,15 @@
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 </body>
 </html>
 
 =======
+=======
+>>>>>>> parent of f37accd (s)
 @if($config['google_analytics_code'])
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script defer src="https://www.googletagmanager.com/gtag/js?id={{ $config['google_analytics_code'] }}"></script>
@@ -81,4 +94,7 @@
 
 </body>
 </html>
+<<<<<<< HEAD
+>>>>>>> parent of f37accd (s)
+=======
 >>>>>>> parent of f37accd (s)
