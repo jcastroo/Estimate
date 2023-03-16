@@ -7,7 +7,12 @@
       'notion' => [
           'worker' => config('services.notion.worker'),
       ],
-
+      'links' => config('links'),
+      'production' => App::isProduction(),
+      'hCaptchaSiteKey' => config('services.h_captcha.site_key'),
+      'google_analytics_code' => config('services.google_analytics_code'),
+      'amplitude_code' => config('services.amplitude_code'),
+      'crisp_website_id' => config('services.crisp_website_id'),
   ];
 @endphp
 <!DOCTYPE html>
@@ -16,11 +21,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  @vite('../js/app.js')
+  @vite('resources/js/app.js')
 
   <link rel="icon" href="{{asset('/img/logob.png')}}">
 
-  <title>Setup Estimate</title>
+  <title>ola mundo</title>
 </head>
 <body>
 <div id="app"></div>
@@ -30,6 +35,8 @@
   window.config = @json($config);
   window.$crisp = []
 </script>
+
+
 
 
 </body>

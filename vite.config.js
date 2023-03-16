@@ -34,10 +34,7 @@ export default defineConfig({
       '@': '/resources'
     }
   },
-  build: {
-    outDir: 'public',
-  
-  }
+
 })
 
 
