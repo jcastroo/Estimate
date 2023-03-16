@@ -38,3 +38,18 @@ export default defineConfig({
 })
 
 
+<<<<<<< HEAD
+=======
+
+module.exports = {
+  build: {
+    rollupOptions: {
+      input: {
+        main: './spa.blade.php'
+      }
+    }
+  }
+}
+
+
+>>>>>>> parent of f37accd (s)
