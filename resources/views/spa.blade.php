@@ -17,7 +17,11 @@
 @endphp
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 <!DOCTYPE html>
+=======
+  <!DOCTYPE html>
+>>>>>>> parent of f37accd (s)
 =======
   <!DOCTYPE html>
 >>>>>>> parent of f37accd (s)
@@ -35,8 +39,11 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   <title>ola mundo</title>
 =======
+=======
+>>>>>>> parent of f37accd (s)
 =======
 >>>>>>> parent of f37accd (s)
   @if($meta)
@@ -54,6 +61,9 @@
   @endif
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of f37accd (s)
+=======
 >>>>>>> parent of f37accd (s)
 =======
 >>>>>>> parent of f37accd (s)
@@ -70,12 +80,15 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 </body>
 </html>
 
 =======
+=======
+>>>>>>> parent of f37accd (s)
 =======
 >>>>>>> parent of f37accd (s)
 @if($config['google_analytics_code'])
@@ -95,6 +108,9 @@
 </body>
 </html>
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of f37accd (s)
+=======
 >>>>>>> parent of f37accd (s)
 =======
 >>>>>>> parent of f37accd (s)
