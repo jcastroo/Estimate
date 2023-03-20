@@ -5,16 +5,16 @@
         <div class="pt-4 pb-0">
           <div class="flex">
             <h2 class="flex-grow text-gray-900">
-              Your Forms
+              Os teus formulários
             </h2>
             <v-button v-track.create_form_click :to="{name:'forms.create'}">
               <svg class="w-4 h-4 text-white inline mr-1 -mt-1" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.99996 1.1665V12.8332M1.16663 6.99984H12.8333" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              Create a new form
+              Criar novo formulário
             </v-button>
           </div>
-          <small class="flex text-gray-500">Manage your forms and submissions.</small>
+          <small class="flex text-gray-500">Contrale os seus formulários e submissões</small>
         </div>
       </div>
     </div>
@@ -44,7 +44,7 @@
               <svg class="w-4 h-4 text-white inline mr-1 -mt-1" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M6.99996 1.1665V12.8332M1.16663 6.99984H12.8333" stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
               </svg>
-              Create a new form
+              Criar novo formulário
             </v-button>
           </div>
           <div v-else-if="forms.length > 0" class="mb-10">
@@ -117,7 +117,7 @@ export default {
   middleware: 'auth',
 
   props: {
-    metaTitle: { type: String, default: 'Your Forms' },
+    metaTitle: { type: String, default: 'Os teus formulários' },
     metaDescription: { type: String, default: 'All of your OpnForm are here. Create new forms, or update your existing one!' }
   },
 
