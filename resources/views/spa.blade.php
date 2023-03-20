@@ -15,19 +15,10 @@
       'crisp_website_id' => config('services.crisp_website_id'),
   ];
 @endphp
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 <!DOCTYPE html>
-=======
-  <!DOCTYPE html>
->>>>>>> parent of f37accd (s)
-=======
-  <!DOCTYPE html>
->>>>>>> parent of f37accd (s)
-=======
-  <!DOCTYPE html>
->>>>>>> parent of f37accd (s)
+
+
 <html lang="{{ app()->getLocale() }}">
 <head>
   <meta charset="utf-8">
@@ -37,15 +28,8 @@
 
   <link rel="icon" href="{{asset('/img/logob.png')}}">
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
   <title>ola mundo</title>
-=======
-=======
->>>>>>> parent of f37accd (s)
-=======
->>>>>>> parent of f37accd (s)
+
   @if($meta)
     <title>{{$meta['title']}}</title>
     <meta name='description' content='{{$meta['description']}}'>
@@ -55,18 +39,10 @@
     <meta name='og:image' content='{{$meta['image']}}'>
     <meta name='og:site_name' content='OpenForm'>
 
-    <meta name="twitter:title" content="{{$meta['title']}}">
-    <meta name="twitter:description" content="{{$meta['description']}}">
-    <meta name="twitter:image" content="{{$meta['image']}}">
+
   @endif
 
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of f37accd (s)
-=======
->>>>>>> parent of f37accd (s)
-=======
->>>>>>> parent of f37accd (s)
+
 </head>
 <body>
 <div id="app"></div>
@@ -78,19 +54,10 @@
 </script>
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-
 
 </body>
 </html>
 
-=======
-=======
->>>>>>> parent of f37accd (s)
-=======
->>>>>>> parent of f37accd (s)
 @if($config['google_analytics_code'])
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script defer src="https://www.googletagmanager.com/gtag/js?id={{ $config['google_analytics_code'] }}"></script>
@@ -107,10 +74,4 @@
 
 </body>
 </html>
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> parent of f37accd (s)
-=======
->>>>>>> parent of f37accd (s)
-=======
->>>>>>> parent of f37accd (s)
+
