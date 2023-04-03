@@ -5,7 +5,7 @@
         <div class="pt-4 pb-0">
           <div class="flex">
             <h2 class="flex-grow text-gray-900">
-              My Account
+              Minha Conta
             </h2>
           </div>
           <ul class="flex text-gray-500">

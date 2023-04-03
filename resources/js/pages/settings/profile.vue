@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3 class="font-semibold text-2xl text-gray-900">Profile details</h3>
-    <small class="text-gray-600">Update your username and manage your account details.</small>
+    <h3 class="font-semibold text-2xl text-gray-900">Detalhes de Conta</h3>
+    <small class="text-gray-600">Update ao username e gerencie os detalhes de conta</small>
 
     <form @submit.prevent="update" @keydown="form.onKeydown($event)" class="mt-3">
       <alert-success class="mb-5" :form="form" :message="$t('info_updated')" />
@@ -13,7 +13,7 @@
       <text-input name="email" :form="form" :label="$t('email')" :required="true" />
 
       <!-- Submit Button -->
-      <v-button :loading="form.busy" class="mt-4">Save changes</v-button>
+      <v-button :loading="form.busy" class="mt-4">Guadar Alterações</v-button>
     </form>
   </div>
 </template>

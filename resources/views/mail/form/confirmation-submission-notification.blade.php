@@ -4,12 +4,12 @@
 
 @if($form->editable_submissions)
 @component('mail::button', ['url' => $form->share_url.'?submission_id='.$submission_id])
-Edit submission
+Editar submissão
 @endcomponent
 @endif
 
 @if($form->notifications_include_submission)
-As a reminder, here are your answers:
+Estas foram as respostas registadas:
 
 @foreach($fields as $field)
 @if(isset($field['value']))
@@ -24,6 +24,6 @@ As a reminder, here are your answers:
 @endforeach
 @endif
 
-<p style="text-align:center"><small>You are receiving this email because you answered the form: <a href="{{url("forms/".$form->slug)}}">"{{$form->title}}"</a>.</small></p>
+<p style="text-align:center"><small>Você esta a receber este mail como confirmação de submissão do seguinte formlário: <a href="{{url("forms/".$form->slug)}}">"{{$form->title}}"</a>.</small></p>
 
 @endcomponent

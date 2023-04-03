@@ -2,15 +2,15 @@
   <div>
     <h3 class="font-semibold text-2xl text-gray-900">Danger zone</h3>
     <p class="text-gray-600 text-sm mt-2">
-      This will permanently delete your entire account. All your forms, submissions and workspaces will be deleted.
-    <span class="text-red-500">
-      This cannot be undone.
+      Isto excluirá permanentemente a sua conta. Todos os seus formulários, submissões e workspaces serão excluídos.
+      <span class="text-red-500">
+      Isto não pode ser revertido.
     </span>
     </p>
 
     <!-- Submit Button -->
     <v-button :loading="loading" class="mt-4" color="red" @click="alertConfirm('Do you really want to delete your account?',deleteAccount)">
-      Delete account
+      Eliminar Conta
     </v-button>
   </div>
 </template>

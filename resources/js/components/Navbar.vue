@@ -4,13 +4,13 @@
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
           <router-link :to="{ name: user ? 'home' : 'welcome' }" class="flex-shrink-0 font-semibold hover:no-underline flex items-center">
-            <img :src="asset('img/logo.png')" alt="notion tools logo" class="w-15 h-8">
+            <img :src="asset('img/logo.png')" alt="notion tools logo" class="w-10 h-7">
             <span
               class="ml-2 text-md hidden sm:inline text-black dark:text-white"
             >
               {{ appName }}</span><span
             class="bg-gray-100 text-gray-600 font-semibold inline-block ml-1 px-2 rounded-full text-black text-xs tracking-wider"
-          >Alpha</span>
+          >ALPHA</span>
           </router-link>
           <workspace-dropdown class="ml-6"/>
         </div>
@@ -43,7 +43,7 @@
                             d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
                       />
                     </svg>
-                    My Forms
+                    Meus Formulários
                   </router-link>
 
                   <router-link :to="{ name: 'settings.profile' }"
@@ -85,14 +85,13 @@
                   </router-link>
 
                   <v-button size="small" :to="{ name: 'forms.create.guest' }" color="outline-blue" v-track.nav_create_form_click :arrow="true">
-                    Criar formulário
+                    Criar Formulário
                   </v-button>
 
                 </div>
               </div>
             </div>
 
-          </div>
         </div>
       </div>
     </div>
@@ -103,17 +102,14 @@
 import {mapGetters} from 'vuex'
 import Dropdown from './common/Dropdown.vue'
 import WorkspaceDropdown from './WorkspaceDropdown.vue'
-
 export default {
   components: {
     WorkspaceDropdown,
     Dropdown
   },
-
   data: () => ({
     appName: window.config.appName,
   }),
-
   computed: {
     githubUrl: () => window.config.links.github_url,
     helpUrl: () => window.config.links.help_url,
@@ -128,7 +124,6 @@ export default {
     },
     hasNavbar() {
       if (this.isIframe) return false
-
       if (this.$route.name && this.$route.name.startsWith('forms.show_public')) {
         if (this.form) {
           // If there is a cover, or if branding is hidden remove nav
@@ -154,16 +149,13 @@ export default {
       return window.config.crisp_website_id
     },
   },
-
   methods: {
     async logout() {
       // Log out the user.
       await this.$store.dispatch('auth/logout')
-
       // Reset store
       this.$store.dispatch('open/workspaces/resetState')
       this.$store.dispatch('open/forms/resetState')
-
       // Redirect to login.
       this.$router.push({name: 'login'})
     },

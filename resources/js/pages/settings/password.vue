@@ -1,7 +1,7 @@
 <template>
   <div>
     <h3 class="font-semibold text-2xl text-gray-900">Password</h3>
-    <small class="text-gray-600">Manage your password.</small>
+    <small class="text-gray-600">Gerencie a sua password.</small>
 
     <form @submit.prevent="update" @keydown="form.onKeydown($event)" class="mt-3">
       <alert-success class="mb-5" :form="form" :message="$t('password_updated')" />

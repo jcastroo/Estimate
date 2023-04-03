@@ -1,7 +1,7 @@
 <template>
   <div>
-    <h3 class="font-semibold text-2xl text-gray-900">Workspace settings</h3>
-    <small class="text-gray-600">Manage your workspaces.</small>
+    <h3 class="font-semibold text-2xl text-gray-900">Defenições Workspace</h3>
+    <small class="text-gray-600">Gerencie os seus workspaces.</small>
 
     <div v-if="loading" class="w-full text-blue-500 text-center">
       <loader class="h-10 w-10 p-5"/>

@@ -1,8 +1,6 @@
 @component('mail::message')
 
-Hello there 👋
-
-Your form "{{$form->title}}" has a new submission.
+O seu formulário "{{$form->title}}" tem uma nova submissão.
 
 @foreach($fields as $field)
 @if(isset($field['value']))
