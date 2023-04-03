@@ -70,13 +70,13 @@ export default {
         labels: [],
         datasets: [
           {
-            label: 'Form Views',
+            label: 'Visualizações do Formulário',
             backgroundColor: 'rgba(59, 130, 246, 1)',
             borderColor: 'rgba(59, 130, 246, 1)',
             data: []
           },
           {
-            label: 'Form Submissions',
+            label: 'Submissões do Formulário',
             backgroundColor: 'rgba(16, 185, 129, 1)',
             borderColor: 'rgba(16, 185, 129, 1)',
             data: []
