@@ -1,8 +1,8 @@
 <template>
   <div>
-      <h3 class="font-semibold text-xl">Share Link</h3>
-      <p>Your form is now published and ready to be shared with the world! Copy this link to share your form
-          on social media, messaging apps or via email.</p>
+      <h3 class="font-semibold text-xl">Link do Fomulário</h3>
+      <p>Copie este link para partilhar o seu formulário
+          nas redes sociais, chat's ou via e-mail.</p>
       <copy-content :content="share_url">
         <template #icon>
           <svg class="h-4 w-4 -mt-1 text-blue-600 inline mr-1" viewBox="0 0 20 10" fill="none"
@@ -12,11 +12,11 @@
               stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </template>
-        Copy Link
+        Copiar
       </copy-content>
   </div>
 </template>
-    
+
 <script>
 import CopyContent from '../../../open/forms/components/CopyContent.vue'
 
@@ -29,7 +29,7 @@ export default {
     },
 
     data: () => ({
-      
+
     }),
 
     computed: {
@@ -41,4 +41,3 @@ export default {
     methods: {}
 }
 </script>
-    

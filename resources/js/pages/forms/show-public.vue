@@ -21,11 +21,11 @@
       <div v-if="!formLoading && !form">
         <h1 class="mt-6" v-text="'Whoops'" />
         <p class="mt-6">
-          Unfortunately we could not find this form. It may have been deleted by it's author.
+          Form eliminada pelo administrador
         </p>
         <p class="mb-10 mt-4">
           <router-link :to="{name:'welcome'}">
-            Create your form for free with OpnForm
+            Crie o seu formlário com o Setup Estimate
           </router-link>
         </p>
       </div>

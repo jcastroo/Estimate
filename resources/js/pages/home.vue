@@ -36,9 +36,9 @@
           <div v-if="!formsLoading && enrichedForms.length === 0" class="flex flex-wrap justify-center max-w-4xl">
             <img loading="lazy" class="w-56"
                   :src="asset('img/pages/forms/search_notfound.png')" alt="search-not-found">
-            <h3 class="w-full mt-4 text-center text-gray-900 font-semibold">No forms found</h3>
+            <h3 class="w-full mt-4 text-center text-gray-900 font-semibold">Nenhuma form encontrada</h3>
             <div v-if="isFilteringForms && enrichedForms.length === 0 && searchForm.search" class="mt-2 w-full text-center">
-              Your search "{{searchForm.search}}" did not match any forms. Please try again.
+              A sua pesquisa não gerou  "{{searchForm.search}}" nenhum resultado. Por favor tente outra vez.
             </div>
             <v-button v-if="forms.length === 0" class="mt-4" v-track.create_form_click :to="{name:'forms.create'}">
               <svg class="w-4 h-4 text-white inline mr-1 -mt-1" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +57,7 @@
                   <ul class="flex text-gray-500">
                     <li class="pr-1">{{ form.views_count }} view{{ form.views_count > 0 ? 's' : '' }}</li>
                     <li class="list-disc ml-6 pr-1">{{ form.submissions_count }}
-                      submission{{ form.submissions_count > 0 ? 's' : '' }}
+                      submissões{{ form.submissions_count > 0 ? 's' : '' }}
                     </li>
                     <li class="list-disc ml-6 pr-1 text-blue-500" v-if="form.visibility=='draft'">Draft (not public)</li>
                     <li class="list-disc ml-6">Edited {{ form.last_edited_human }}</li>
@@ -72,7 +72,7 @@
                       <div v-if="i==1" :key="tag"
                           class="bg-gray-300 dark:bg-gray-700 text-white px-2 py-1 mr-2 text-xs inline rounded-lg font-semibold"
                       >
-                        {{ form.tags.length-1 }} more
+                        {{ form.tags.length-1 }} mais
                       </div>
                     </template>
                   </div>

@@ -3,7 +3,7 @@
     <div class="mt-6 flex flex-col">
       <div class="w-full md:max-w-3xl md:mx-auto px-4 md:pt-16">
         <h1 class="sm:text-5xl mb-4">
-          Integrations
+          Integrações
         </h1>
         <notion-page class="mb-8 integration-page" page-id="492c2bbb31404481b9faaaf407e59640" />
       </div>

@@ -63,7 +63,7 @@
                     label="Hide Title"
     />
     <toggle-switch-input name="no_branding" :form="form" class="mt-4"
-                    label="Remove OpnForm Branding"
+                    label="Remove Setup Tech Branding"
     />
     <toggle-switch-input name="uppercase_labels" :form="form" class="mt-4"
                     label="Uppercase Input Labels"

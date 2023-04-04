@@ -12,7 +12,7 @@
               d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
         />
       </svg>
-      Regenerate form link
+      Gerar novo URL
     </v-button>
 
     <!--  Regenerate form link modal  -->
@@ -26,42 +26,39 @@
         </svg>
       </template>
       <template #title>
-        Generate new form link
+        Gerar novo URL para o formulário
       </template>
       <div class="p-4">
         <p>
-          You can choose between two different URL formats for your form.
-          <span class="font-semibold">Be careful, changing your form URL is not a reversible operation</span>.
-          Make sure to udpate your form URL everywhere where it's used.
+          Poderá escolher entre dois formatos de URL diferentes para o seu formulário.
         </p>
         <div class="border-t py-4 mt-4">
           <h3 class="text-xl text-gray-700 font-semibold">
-            Human Readable URL
+             URL Normal
           </h3>
-          <p>If your users are going to see this url, you might want to make nice and readable. Example:</p>
+          <p>Versão de URL simples e legivel para o usuário. Exemplo:</p>
           <p class="text-gray-600 border p-4 bg-gray-50 rounded-md mt-4">
-            https://opnform.com/forms/contact
-          </p>
+            https://setuptech/forms/contact
+            </p>
           <div class="text-center mt-4">
             <v-button :loading="loadingNewLink" color="outline-blue" @click="regenerateLink('slug')">
-              Generate a Human Readable URL
+              Gerar URL Normal
             </v-button>
           </div>
         </div>
         <div class="border-t pt-4 mt-4">
           <h3 class="text-xl text-gray-700 font-semibold">
-            Random ID URL
+             URL com id aleatório
           </h3>
           <p>
-            If your user are not going to see your form url (if it's embedded), and if you prefer to have a random
-            non-guessable URL. Example:
+            Se preferir ter um endereço URL aleatório e não legível. Exemplo
           </p>
           <p class="text-gray-600 p-4 border bg-gray-50 rounded-md mt-4">
-            https://opnform.com/forms/b4417f9c-34ae-4421-8006-832ee47786e7
+            https://setuptech/forms/b4417f9c-34ae-4421-8006-832ee47786e7
           </p>
           <div class="text-center mt-4">
             <v-button :loading="loadingNewLink" color="outline-blue" @click="regenerateLink('uuid')">
-              Generate a Random ID URL
+              Gerar URL com id aleatório
             </v-button>
           </div>
         </div>

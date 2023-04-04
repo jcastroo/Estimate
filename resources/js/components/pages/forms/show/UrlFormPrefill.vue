@@ -12,7 +12,7 @@
               d="M17 16v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-7a2 2 0 012-2h2m3-4H9a2 2 0 00-2 2v7a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-1m-1 4l-3 3m0 0l-3-3m3 3V3"
         />
       </svg>
-      Url form pre-fill
+       Pré-preenchimento do formulário
       <pro-tag class="ml-2"/>
     </v-button>
 
@@ -31,23 +31,23 @@
 
       <div class="p-4">
         <p>
-          Create dynamic links when sharing your form (whether it's embedded or not), that allows you to prefill
-          your form fields. You can use this to personalize the form when sending it to multiple contacts for instance.
+          Crie links dinâmicos que ao compartilhar o formulário,  permitem o preenchimento prévio dos
+          seus campos.
         </p>
 
         <h3 class="mt-6 border-t text-xl font-semibold mb-4 pt-6">
-          How does it work?
+          Como funciona?
         </h3>
 
         <p>
-          Complete your form below and fill only the fields you want to prefill. You can even leave the required fields empty.
+          Complete o formlário a baixo com os campos que dejesa que sejam pré preenchidos. De seguida será gerado um link de partilha que puderá usar para compartilhar o formulário com os campos pré-preenchidos.
         </p>
 
         <div class="rounded-lg p-5 bg-gray-100 dark:bg-gray-900 mt-4">
           <open-form v-if="form" :theme="theme" :loading="false" :show-hidden="true" :form="form" :fields="form.properties" @submit="generateUrl">
             <template #submit-btn="{submitForm}">
               <v-button class="mt-2 px-8 mx-1" @click.prevent="submitForm">
-                Generate Pre-filled URL
+                Gerar URL pré preenchido
               </v-button>
             </template>
           </open-form>
@@ -55,7 +55,7 @@
 
         <template v-if="prefillFormData">
           <h3 class="mt-6 text-xl font-semibold mb-4 pt-6">
-            Your Prefill url
+            URL pré-preenchido
           </h3>
           <form-url-prefill :form="form" :form-data="prefillFormData" :extra-query-param="extraQueryParam" />
         </template>

@@ -4,7 +4,7 @@
 
     <div v-if="isPublicFormPage && form.is_password_protected">
       <p class="form-description mb-4 text-gray-700 dark:text-gray-300 px-2">
-        This form is protected by a password.
+        From protegida com password.
       </p>
       <div class="form-group flex flex-wrap w-full">
         <div class="relative mb-3 w-full px-2">
@@ -13,7 +13,7 @@
       </div>
       <div class="flex flex-wrap justify-center w-full text-center">
         <v-button @click="passwordEntered">
-          Submit
+          Submeter
         </v-button>
       </div>
     </div>
@@ -24,7 +24,7 @@
       >
         <div class="flex flex-grow">
           <p class="mb-0 py-2 px-4 text-yellow-600">
-            We disabled the password protection for this form because you are an owner of it.
+            Proteção com password desabilitada por você ser o administrador
           </p>
           <v-button color="yellow" @click="hidePasswordDisabledMsg=true">
             OK
@@ -62,7 +62,7 @@
       </div>
       <div class="text-right">
         <v-button color="yellow" shade="light" @click="form.cleanings=false">
-          Close
+          Fechar
         </v-button>
       </div>
     </div>
@@ -110,11 +110,9 @@
           {{ form.re_fill_button_text }}
         </open-form-button>
         <p v-if="form.editable_submissions && submissionId" class="mt-5">
-          <a target="_parent" :href="form.share_url+'?submission_id='+submissionId" class="text-nt-blue hover:underline">Edit submission</a>
+          <a target="_parent" :href="form.share_url+'?submission_id='+submissionId" class="text-nt-blue hover:underline">Editar submissão</a>
         </p>
-        <p v-if="!form.no_branding" class="mt-5">
-          <a target="_parent" href="https://opnform.com/?utm_source=form&utm_content=create_form_free" class="text-nt-blue hover:underline">Create your form for free with Estimate</a>
-        </p>
+
       </div>
     </transition>
   </div>

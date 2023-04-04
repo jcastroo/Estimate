@@ -4,7 +4,7 @@ export default {
   methods: {
     initForm() {
       this.form = new Form({
-        title: 'My Form',
+        title: 'Fomulário',
         description: null,
         visibility: 'public',
         workspace_id: this.workspace?.id,
@@ -25,22 +25,22 @@ export default {
         uppercase_labels: true,
         transparent_background: false,
         closes_at: null,
-        closed_text: 'This form has now been closed by its owner and does not accept submissions anymore.',
+        closed_text: 'Aparentemente, o formulário não esta a aceitar mais submissões',
 
         // Submission
-        submit_button_text: 'Submit',
+        submit_button_text: 'Submeter',
         re_fillable: false,
-        re_fill_button_text: 'Fill Again',
-        submitted_text: 'Amazing, we saved your answers. Thank you for your time and have a great day!',
+        re_fill_button_text: 'Preencher Novamente',
+        submitted_text: 'Todas as respostas guardadas',
         notification_sender: 'Estimate',
-        notification_subject: 'We saved your answers',
-        notification_body: 'Hello there 👋 <br>This is a confirmation that your submission was successfully saved.',
+        notification_subject: 'Guardamos as suas respostas',
+        notification_body: 'Confirmação que a sua submissão foi registada',
         notifications_include_submission: true,
         use_captcha: false,
         is_rating: false,
         rating_max_value: 5,
         max_submissions_count: null,
-        max_submissions_reached_text: 'This form has now reached the maximum number of allowed submissions and is now closed.',
+        max_submissions_reached_text: 'Número máximo de submissões atingido',
 
         // Security & Privacy
         can_be_indexed: true

@@ -2,11 +2,11 @@
   <div
     class="my-4 w-full mx-auto">
     <h3 class="font-semibold mb-4 text-xl">
-      Form Submissions
+       Submissões
       <span v-if="form && !isLoading && tableData.length > 0" class="text-right text-xs uppercase mb-2"> - <a
         :href="exportUrl" target="_blank">Export as CSV</a></span>
       <span v-if="form && !isLoading && formInitDone" class="float-right text-xs uppercase mb-2"> <a
-        href="javascript:void(0);" @click="showColumnsModal=true">Display columns</a></span>
+        href="javascript:void(0);" @click="showColumnsModal=true">Controlo de colunas</a></span>
     </h3>
 
     <!--  Table columns modal  -->
@@ -18,12 +18,12 @@
         </svg>
       </template>
       <template #title>
-        Display columns
+        Controlo de colunas
       </template>
 
       <div class="px-4">
         <template v-if="properties.length > 0">
-          <h4 class="font-bold mb-2">Form Fields</h4>
+          <h4 class="font-bold mb-2">Campos do Formulário</h4>
           <div v-for="field in properties" :key="field.id" class="p-2 border">
             {{ field.name }}
             <v-switch v-model="displayColumns[field.id]" @input="onChangeDisplayColumns" class="float-right"/>

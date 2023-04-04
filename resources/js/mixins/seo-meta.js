@@ -1,7 +1,7 @@
 export default {
   metaInfo () {
     const title = this.metaTitle ?? 'Estimate'
-    const description = this.metaDescription ?? "Create beautiful forms for free. Unlimited fields, unlimited submissions. It's free and it takes less than 1 minute to create your first form."
+    const description = this.metaDescription ?? "Plataforma de criação e configuração de formulários"
     const image = this.metaImage ?? this.asset('img/logo.png')
 
     return {

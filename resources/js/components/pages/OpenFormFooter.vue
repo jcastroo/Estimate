@@ -8,10 +8,7 @@
       </div>
       <div class="flex justify-center mt-5 md:mt-0">
         <router-link :to="{ name: user ? 'home' : 'welcome' }" class="flex-shrink-0 font-semibold flex items-center">
-          <img :src="asset('img/logo.png')" alt="notion tools logo" class="w-15 h-10">
-          <span class="ml-2 text-xl text-black dark:text-white">
-            {{ appName }}
-          </span>
+          <img :src="asset('img/logo.png')" alt="notion tools logo" class="w-20 h-12">
         </router-link>
       </div>
     </div>

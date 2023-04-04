@@ -4,7 +4,7 @@
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center">
           <router-link :to="{ name: user ? 'home' : 'welcome' }" class="flex-shrink-0 font-semibold hover:no-underline flex items-center">
-            <img :src="asset('img/logo.png')" alt="notion tools logo" class="w-10 h-7">
+            <img :src="asset('img/logo.png')" alt="notion tools logo" class="w-15 h-7">
             <span
               class="ml-2 text-md hidden sm:inline text-black dark:text-white"
             >

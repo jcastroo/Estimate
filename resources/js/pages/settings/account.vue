@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="font-semibold text-2xl text-gray-900">Danger zone</h3>
+    <h3 class="font-semibold text-2xl text-gray-900">Eliminação de conta</h3>
     <p class="text-gray-600 text-sm mt-2">
       Isto excluirá permanentemente a sua conta. Todos os seus formulários, submissões e workspaces serão excluídos.
       <span class="text-red-500">

@@ -1,8 +1,8 @@
 <template>
   <div>
-    <h3 class="font-semibold text-xl">Embed</h3>
-    <p>Embed your form on your website by copying the HTML code below.</p>
-    <copy-content :content="embedCode" buttonText="Copy Code">
+    <h3 class="font-semibold text-xl">Incorporar</h3>
+    <p>Incorpore o seu formulário no seu website copiando o código HTML abaixo.</p>
+    <copy-content :content="embedCode" buttonText="Copiar Código">
       <template #icon>
         <svg class="h-4 w-4 -mt-1 text-blue-600 inline mr-1" viewBox="0 0 18 18" fill="none"
               xmlns="http://www.w3.org/2000/svg">
@@ -11,11 +11,12 @@
             stroke="currentColor" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </template>
-      Copy Code
+      Copiar
     </copy-content>
   </div>
 </template>
-    
+
+
 <script>
 import CopyContent from '../../../open/forms/components/CopyContent.vue'
 
@@ -28,7 +29,7 @@ export default {
     },
 
     data: () => ({
-      
+
     }),
 
     computed: {
@@ -52,4 +53,3 @@ export default {
     methods: {}
 }
 </script>
-    
