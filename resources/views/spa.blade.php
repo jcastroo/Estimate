@@ -32,8 +32,6 @@
 
   @if($meta)
     <title>{{$meta['title']}}</title>
-    <meta name='og:title' content='{{$meta['title']}}'>
-    <meta name='og:site_name' content='Setup Estimate'>
 
 
   @endif
