@@ -28,7 +28,7 @@
 
   <link rel="icon" href="{{asset('/img/logob.png')}}">
 
-  <title>ola mundo</title>
+  <title>Setup Estimate</title>
 
   @if($meta)
     <title>{{$meta['title']}}</title>
@@ -37,7 +37,7 @@
     <meta name='og:title' content='{{$meta['title']}}'>
     <meta name='og:description' content='{{$meta['description']}}'>
     <meta name='og:image' content='{{$meta['image']}}'>
-    <meta name='og:site_name' content='OpenForm'>
+    <meta name='og:site_name' content='Setup Estimate'>
 
 
   @endif
