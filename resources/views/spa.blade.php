@@ -1,4 +1,17 @@
-
+@php
+  $config = [
+      'appName' => config('app.name'),
+      'locale' => $locale = app()->getLocale(),
+      'locales' => config('app.locales'),
+      'githubAuth' => config('services.github.client_id'),
+      'notion' => [
+          'worker' => config('services.notion.worker'),
+      ],
+      'links' => config('links'),
+      'production' => App::isProduction(),
+      'hCaptchaSiteKey' => config('services.h_captcha.site_key'),
+  ];
+@endphp
 
 <!DOCTYPE html>
 
