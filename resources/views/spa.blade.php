@@ -47,30 +47,8 @@
 <body>
 <div id="app"></div>
 
-{{-- Global configuration object --}}
-<script>
-  window.config = @json($config);
-  window.$crisp = []
-</script>
-
-
-
 </body>
 </html>
-
-@if($config['google_analytics_code'])
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id={{ $config['google_analytics_code'] }}"></script>
-<script defer>
-  window.dataLayer = window.dataLayer || []
-
-  function gtag () {dataLayer.push(arguments)}
-
-  gtag('js', new Date())
-
-  gtag('config', "{{ $config['google_analytics_code'] }}" {{ \Illuminate\Support\Facades\App::isProduction() ? '' : ', { send_page_view: false, debug_mode:true  }' }})
-</script>
-@endif
 
 </body>
 </html>
