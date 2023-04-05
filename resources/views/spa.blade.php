@@ -30,13 +30,6 @@
 
   <title>Setup Estimate</title>
 
-  @if($meta)
-    <title>{{$meta['title']}}</title>
-
-
-  @endif
-
-
 </head>
 <body>
 <div id="app"></div>
