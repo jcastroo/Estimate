@@ -33,6 +33,12 @@ export const themes = {
       input: 'border-transparent flex-1 appearance-none border border-gray-300 dark:border-gray-600 w-full py-2 px-2 bg-white text-gray-700 dark:bg-notion-dark-light dark:text-gray-300 dark:placeholder-gray-500 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:border-transparent focus:ring-opacity-100',
       help: 'text-gray-400 dark:text-gray-500'
     },
+    DistanceInput: {
+      label: 'text-gray-700 dark:text-gray-300 font-semibold',
+      input: 'border-transparent flex-1 appearance-none border border-gray-300 dark:border-gray-600 w-full py-2 px-2 bg-white text-gray-700 dark:bg-notion-dark-light dark:text-gray-300 dark:placeholder-gray-500 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:border-transparent focus:ring-opacity-100',
+      input: 'border-transparent flex-1 appearance-none border border-gray-300 dark:border-gray-600 w-full py-2 px-2 bg-white text-gray-700 dark:bg-notion-dark-light dark:text-gray-300 dark:placeholder-gray-500 placeholder-gray-400 text-base focus:outline-none focus:ring-2 focus:border-transparent focus:ring-opacity-100',
+      help: 'text-gray-400 dark:text-gray-500'
+    },
     Button: {
       body: 'transition ease-in duration-200 text-center font-semibold focus:outline-none focus:ring-2 focus:ring-offset-2 filter hover:brightness-110'
     },

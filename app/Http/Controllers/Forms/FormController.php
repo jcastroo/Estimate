@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers\Forms;
 
 use App\Http\Controllers\Controller;
@@ -106,7 +105,7 @@ class FormController extends Controller
             ->processRequest($request)
             ->simulateCleaning($form->workspace)
             ->getData();
-        
+
         // Set Removed Properties
         $formData['removed_properties'] = array_merge($form->removed_properties, collect($form->properties)->filter(function ($field) use ($formData) {
             return (!Str::of($field['type'])->startsWith('nf-') && !in_array($field['id'], collect($formData['properties'])->pluck("id")->toArray()));

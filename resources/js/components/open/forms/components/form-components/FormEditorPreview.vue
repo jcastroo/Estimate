@@ -4,9 +4,9 @@
     class="bg-gray-50 dark:bg-notion-dark-light hidden md:flex flex-grow p-5 flex-col items-center overflow-y-scroll"
   >
     <p class="mb-2 text-center text-gray-700">
-      Preview Full Page
+        Vizualizar página completa
       <v-switch v-model="previewEmbed" class="inline px-2" />
-      Preview Embed
+      Vizualizar form embutida
     </p>
     <p class="font-semibold">
       <span v-if="previewFormSubmitted && !form.re_fillable">

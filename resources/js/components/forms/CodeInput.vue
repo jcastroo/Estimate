@@ -40,6 +40,13 @@ export default {
   components: { PrismEditor },
   mixins: [inputMixin],
 
+  props: {
+    price: {
+      type: Number,
+      default: 0
+    }
+  },
+
   methods: {
     onChange (event) {
       const file = event.target.files[0]

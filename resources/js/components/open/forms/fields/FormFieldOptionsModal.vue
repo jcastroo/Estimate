@@ -230,6 +230,12 @@
           Hide field name
         </v-checkbox>
 
+        <!-- Price -->
+        <text-input name="preco" class="mt-4"
+                    :form="field" :required="false"
+                    label="Preco €" native-type="number"
+        />
+
         <!-- Pre-fill depends on type -->
         <v-checkbox v-if="field.type=='checkbox'" v-model="field.prefill" class="mt-4"
                     :name="field.id+'_prefill'"
@@ -330,6 +336,8 @@
           If you enable this, we will hide this field and fill it a unique number on each new form submission
         </p>
       </div>
+
+
 
       <!--  Logic Block -->
       <form-block-logic-editor v-model="form" :form="form" :field="field"/>

@@ -178,7 +178,7 @@ class Form extends Model
     public function getFormPendingSubmissionKeyAttribute()
     {
         if ($this->updated_at?->timestamp) {
-            return "openform-" . $this->id . "-pending-submission-" . substr($this->updated_at?->timestamp, -6);
+            return "setup-estimate-" . $this->id . "-pending-submission-" . substr($this->updated_at?->timestamp, -6);
         }
         return null;
     }

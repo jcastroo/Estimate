@@ -3,8 +3,7 @@
     <!-- Form fields selection -->
     <div class="w-full md:w-1/2 lg:w-2/5 border-r relative overflow-y-scroll md:max-w-sm flex-shrink-0">
       <div class="p-4 bg-blue-50 border-b text-nt-blue-dark md:hidden">
-        We suggest you create this form on a device with a larger screen such as computed. That will allow you
-        to preview your form changes.
+        Para obter uma experiência completa recomendos usar a plataforma no computador
       </div>
       <div class="p-4 pb-0">
         <a v-if="!isGuest" href="#" @click.prevent="$router.back()" class="flex text-blue mb-2 font-semibold text-sm">
@@ -12,7 +11,7 @@
             <path d="M5 9L1 5L5 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
                   stroke-linejoin="round"/>
           </svg>
-          Go back
+          Retroceder
         </a>
         <h3 class="font-semibold text-lg">{{ form.title }}</h3>
         <small v-if="isEdit" class="text-gray-500">Edited {{ form.last_edited_human }}</small>
@@ -25,7 +24,7 @@
             <path d="M17 21V13H7V21M7 3V8H15M19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V5C3 4.46957 3.21071 3.96086 3.58579 3.58579C3.96086 3.21071 4.46957 3 5 3H16L21 8V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
 
-          Save changes
+          Guardar Formulário
         </v-button>
       </div>
 

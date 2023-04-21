@@ -15,7 +15,6 @@ import ImageInput from './ImageInput.vue'
 import RatingInput from './RatingInput.vue'
 import FlatSelectInput from './FlatSelectInput.vue'
 import ToggleSwitchInput from './ToggleSwitchInput.vue'
-
 // Components that are registered globaly.
 [
   HasError,
@@ -32,7 +31,7 @@ import ToggleSwitchInput from './ToggleSwitchInput.vue'
   ImageInput,
   RatingInput,
   FlatSelectInput,
-  ToggleSwitchInput
+  ToggleSwitchInput,
 ].forEach(Component => {
   Vue.component(Component.name, Component)
 })

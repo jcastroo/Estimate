@@ -22,7 +22,10 @@
                    class="nf-code w-full px-2 mb-3"
                    v-html="field.content"
               />
-              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id" 
+              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id"
+                  class="border-b my-4 w-full mx-2"
+              />
+              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id"
                   class="border-b my-4 w-full mx-2"
               />
               <div v-if="field.type === 'nf-image' && (field.image_block || !isPublicFormPage)" :id="field.id"
@@ -46,6 +49,75 @@
         <has-error :form="dataForm" field="h-captcha-response"/>
       </div>
     </template>
+
+    <template>
+  <div class="relative w-full h-full">
+    <div class="absolute hidden w-full lg:block h-96"></div>
+    <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+
+      <div class="grid max-w-screen-md gap-10 md:grid-cols-1 sm:mx-auto">
+        <div>
+          <div class="p-8 bg-gray-900 rounded">
+            <div class="mb-4 text-center">
+              <p class="text-xl font-medium tracking-wide text-white">
+                Estimativa
+              </p>
+              <div class="flex items-center justify-center">
+                <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
+                  {{ totalPreco }}
+                </p>
+                <p class="text-lg text-gray-500"></p>
+              </div>
+            </div>
+            <ul class="mb-8 space-y-2">
+              <li class="flex items-center">
+                <div class="mr-3">
+                  <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                    <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                    <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                  </svg>
+                </div>
+                <p class="font-medium text-gray-300"></p>
+              </li>
+              <li class="flex items-center">
+                <div class="mr-3">
+                  <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                    <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                    <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                  </svg>
+                </div>
+                <p class="font-medium text-gray-300"></p>
+              </li>
+              <li class="flex items-center">
+                <div class="mr-3">
+                  <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                    <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                    <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                  </svg>
+                </div>
+                <p class="font-medium text-gray-300"></p>
+              </li>
+              <li class="flex items-center">
+                <div class="mr-3">
+                  <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
+                    <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
+                    <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
+                  </svg>
+                </div>
+                <p class="font-medium text-gray-300"></p>
+              </li>
+            </ul>
+
+          </div>
+          <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75"></div>
+          <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50"></div>
+          <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</template>
 
     <!--  Submit, Next and previous buttons  -->
     <div class="flex flex-wrap justify-center w-full">
@@ -167,6 +239,8 @@ export default {
     isLastPage() {
       return this.currentFieldGroupIndex === (this.fieldGroups.length - 1)
     },
+
+
     fieldComponents() {
       return {
         text: 'TextInput',
@@ -208,6 +282,15 @@ export default {
         fieldsHidden[field.id] = (new FormLogicPropertyResolver(field, this.dataFormValue)).isHidden()
       })
       return fieldsHidden
+    },
+
+    totalPreco() {
+      let total = 0;
+      this.fields.forEach((field) => {
+        let preco = parseInt(field.preco)
+        total = preco+total;
+      })
+      return total
     },
     isFieldRequired() {
       const fieldsRequired = {}
