@@ -64,48 +64,16 @@
               </p>
               <div class="flex items-center justify-center">
                 <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
-                  {{ totalPreco }}
+                  {{ totalPreco }} €
                 </p>
                 <p class="text-lg text-gray-500"></p>
               </div>
             </div>
             <ul class="mb-8 space-y-2">
               <li class="flex items-center">
-                <div class="mr-3">
-                  <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
-                    <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
-                    <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
-                  </svg>
-                </div>
-                <p class="font-medium text-gray-300"></p>
+                <p class="font-medium text-gray-300"> {{ funcionalidades }}</p>
               </li>
-              <li class="flex items-center">
-                <div class="mr-3">
-                  <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
-                    <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
-                    <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
-                  </svg>
-                </div>
-                <p class="font-medium text-gray-300"></p>
-              </li>
-              <li class="flex items-center">
-                <div class="mr-3">
-                  <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
-                    <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
-                    <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
-                  </svg>
-                </div>
-                <p class="font-medium text-gray-300"></p>
-              </li>
-              <li class="flex items-center">
-                <div class="mr-3">
-                  <svg class="w-4 h-4 text-teal-accent-400" viewBox="0 0 24 24" stroke-linecap="round" stroke-width="2">
-                    <polyline fill="none" stroke="currentColor" points="6,12 10,16 18,8"></polyline>
-                    <circle cx="12" cy="12" fill="none" r="11" stroke="currentColor"></circle>
-                  </svg>
-                </div>
-                <p class="font-medium text-gray-300"></p>
-              </li>
+
             </ul>
 
           </div>
@@ -285,12 +253,70 @@ export default {
     },
 
     totalPreco() {
-      let total = 0;
-      this.fields.forEach((field) => {
-        let preco = parseInt(field.preco)
-        total = preco+total;
-      })
-      return total
+      const vetor = [];
+
+
+
+      const data = this.dataForm.data()
+
+      const numElementos = Object.keys(data).length;
+
+
+      for (let i = 0; i < numElementos; i++) {
+
+        this.fields.forEach((field) => {
+            if (field.type === 'checkbox' && Object.values(data)[i] ===true) {
+
+                 vetor[i] = parseInt(this.fields[i].preco)
+
+
+              }
+
+         })
+
+
+        }
+
+      const total = vetor.reduce((acumulador, numero) => acumulador + numero, 0);
+
+      console.log(total);
+
+
+         return total
+
+    },
+
+
+    funcionalidades() {
+      const vetor = [];
+
+
+
+      const data = this.dataForm.data()
+
+      const numElementos = Object.keys(data).length;
+
+
+      for (let i = 0; i < numElementos; i++) {
+
+        this.fields.forEach((field) => {
+            if (field.type === 'checkbox' && Object.values(data)[i] ===true) {
+
+                 vetor[i] = this.fields[i].name
+
+
+              }
+
+         })
+
+
+        }
+
+
+
+
+         return vetor
+
     },
     isFieldRequired() {
       const fieldsRequired = {}
