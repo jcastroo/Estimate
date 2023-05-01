@@ -4,10 +4,10 @@
 
     <form @submit.prevent="login" @keydown="form.onKeydown($event)" class="mt-4">
       <!-- Email -->
-      <text-input name="email" :form="form" :label="$t('email')" :required="true" placeholder="Your email address" />
+      <text-input name="email" :form="form" :label="$t('email')" :required="true" placeholder="Endereço de email" />
 
       <!-- Password -->
-      <text-input native-type="password" placeholder="Your password"
+      <text-input native-type="password" placeholder="A sua password"
                   name="password" :form="form" :label="$t('password')" :required="true"
       />
 
@@ -19,16 +19,16 @@
 
         <div class="w-full md:w-1/2 text-right">
           <a href="#" @click.prevent="showForgotModal=true" class="text-xs hover:underline text-gray-500 sm:text-sm hover:text-gray-700">
-            Forgot your password?
+            Redefenir Password
           </a>
         </div>
       </div>
 
       <!-- Submit Button -->
-      <v-button dusk="btn_login" :loading="form.busy">Log in to continue</v-button>
+      <v-button dusk="btn_login" :loading="form.busy">Log in para continuar</v-button>
 
       <p class="text-gray-500 mt-4">
-        Don't have an account?  
+        Não tem uma conta?
         <a href="#" v-if="isQuick" @click.prevent="$emit('openRegister')" class="font-semibold ml-1">Sign Up</a>
         <router-link v-else :to="{name:'register'}" class="font-semibold ml-1">Sign Up</router-link>
       </p>
@@ -56,7 +56,7 @@ export default {
       required: false,
       default: false
     }
-  }, 
+  },
 
   data: () => ({
     form: new Form({

@@ -8,7 +8,7 @@
         </svg>
       </template>
       <template #title>
-        Login to SetupEstimate
+        Login no SetupEstimate
       </template>
       <div class="px-4">
         <login-form :isQuick="true" @openRegister="openRegister" @afterQuickLogin="afterQuickLogin" />
@@ -24,7 +24,7 @@
         </svg>
       </template>
       <template #title>
-        Create an account
+        Criar conta
       </template>
       <div class="px-4">
         <register-form :isQuick="true" @openLogin="openLogin" @afterQuickLogin="afterQuickLogin" />

@@ -7,30 +7,19 @@
   <form v-else-if="dataForm" @submit.prevent="">
     <transition name="fade" mode="out-in" appear>
       <template v-for="group, groupIndex in fieldGroups">
-        <div v-if="currentFieldGroupIndex===groupIndex" :key="groupIndex" class="form-group flex flex-wrap w-full">
+        <div v-if="currentFieldGroupIndex === groupIndex" :key="groupIndex" class="form-group flex flex-wrap w-full">
           <template v-for="field in group">
-            <component :is="getFieldComponents(field)" v-if="getFieldComponents(field)"
-                       :key="field.id + formVersionId" :class="getFieldClasses(field)"
-                       v-bind="inputProperties(field)" :required="isFieldRequired[field.id]"
-            />
+            <component :is="getFieldComponents(field)" v-if="getFieldComponents(field)" :key="field.id + formVersionId"
+              :class="getFieldClasses(field)" v-bind="inputProperties(field)" :required="isFieldRequired[field.id]" />
             <template v-else>
               <div v-if="field.type === 'nf-text' && field.content" :id="field.id" :key="field.id"
-                   class="nf-text w-full px-2 mb-3"
-                   v-html="field.content"
-              />
+                class="nf-text w-full px-2 mb-3" v-html="field.content" />
               <div v-if="field.type === 'nf-code' && field.content" :id="field.id" :key="field.id"
-                   class="nf-code w-full px-2 mb-3"
-                   v-html="field.content"
-              />
-              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id"
-                  class="border-b my-4 w-full mx-2"
-              />
-              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id"
-                  class="border-b my-4 w-full mx-2"
-              />
+                class="nf-code w-full px-2 mb-3" v-html="field.content" />
+              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id" class="border-b my-4 w-full mx-2" />
+              <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id" class="border-b my-4 w-full mx-2" />
               <div v-if="field.type === 'nf-image' && (field.image_block || !isPublicFormPage)" :id="field.id"
-                   :key="field.id" class="my-4 w-full px-2"
-              >
+                :key="field.id" class="my-4 w-full px-2">
                 <div v-if="!field.image_block" class="p-4 border border-dashed">
                   Open <b>{{ field.name }}'s</b> block settings to upload image.
                 </div>
@@ -45,60 +34,61 @@
     <!-- Captcha -->
     <template v-if="form.use_captcha && isLastPage">
       <div class="mb-3 px-2 mt-2 mx-auto w-max">
-        <vue-hcaptcha ref="hcaptcha" :sitekey="hCaptchaSiteKey" :theme="darkModeEnabled?'dark':'light'"/>
-        <has-error :form="dataForm" field="h-captcha-response"/>
+        <vue-hcaptcha ref="hcaptcha" :sitekey="hCaptchaSiteKey" :theme="darkModeEnabled ? 'dark' : 'light'" />
+        <has-error :form="dataForm" field="h-captcha-response" />
       </div>
     </template>
 
     <template>
-  <div class="relative w-full h-full">
-    <div class="absolute hidden w-full lg:block h-96"></div>
-    <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div class="relative w-full h-full">
+        <div class="absolute hidden w-full lg:block h-96"></div>
+        <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
 
-      <div class="grid max-w-screen-md gap-10 md:grid-cols-1 sm:mx-auto">
-        <div>
-          <div class="p-8 bg-gray-900 rounded">
-            <div class="mb-4 text-center">
-              <p class="text-xl font-medium tracking-wide text-white">
-                Estimativa
-              </p>
-              <div class="flex items-center justify-center">
-                <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
-                  {{ totalPreco }} €
-                </p>
-                <p class="text-lg text-gray-500"></p>
+          <div class="grid max-w-screen-md gap-10 md:grid-cols-1 sm:mx-auto">
+            <div>
+              <div class="p-8 bg-gray-900 rounded">
+                <div class="mb-4 text-center">
+                  <p class="text-xl font-medium tracking-wide text-white">
+                    Estimativa
+                  </p>
+                  <div class="flex items-center justify-center">
+                    <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
+                      {{ totalPreco }} €
+                    </p>
+                    <p class="text-lg text-gray-500"></p>
+                  </div>
+                </div>
+                <ul class="mb-8 space-y-2">
+                  <li class="flex items-center">
+                    <p class="font-medium text-gray-300"> {{ funcionalidades }}</p>
+                  </li>
+                  <li class="flex items-center">
+                    <p class="font-medium text-gray-300"> Distancia Total: {{ distancia }} km</p>
+                  </li>
+
+                </ul>
+
               </div>
+              <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75"></div>
+              <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50"></div>
+              <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25"></div>
             </div>
-            <ul class="mb-8 space-y-2">
-              <li class="flex items-center">
-                <p class="font-medium text-gray-300"> {{ funcionalidades }}</p>
-              </li>
-
-            </ul>
 
           </div>
-          <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75"></div>
-          <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50"></div>
-          <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25"></div>
         </div>
-
       </div>
-    </div>
-  </div>
-</template>
+    </template>
 
     <!--  Submit, Next and previous buttons  -->
     <div class="flex flex-wrap justify-center w-full">
-      <open-form-button v-if="currentFieldGroupIndex>0 && previousFieldsPageBreak && !loading" native-type="button"
-                        :color="form.color" :theme="theme" class="mt-2 px-8 mx-1" @click="previousPage"
-      >
+      <open-form-button v-if="currentFieldGroupIndex > 0 && previousFieldsPageBreak && !loading" native-type="button"
+        :color="form.color" :theme="theme" class="mt-2 px-8 mx-1" @click="previousPage">
         {{ previousFieldsPageBreak.previous_btn_text }}
       </open-form-button>
 
-      <slot v-if="isLastPage" name="submit-btn" :submitForm="submitForm"/>
+      <slot v-if="isLastPage" name="submit-btn" :submitForm="submitForm" />
       <open-form-button v-else native-type="button" :color="form.color" :theme="theme" class="mt-2 px-8 mx-1"
-                        @click="nextPage"
-      >
+        @click="nextPage">
         {{ currentFieldsPageBreak.next_btn_text }}
       </open-form-button>
       <div v-if="!currentFieldsPageBreak && !isLastPage">
@@ -120,7 +110,7 @@ import FormPendingSubmissionKey from '../../../mixins/forms/form-pending-submiss
 
 export default {
   name: 'Estimate',
-  components: {OpenFormButton, VueHcaptcha},
+  components: { OpenFormButton, VueHcaptcha },
   mixins: [FormPendingSubmissionKey],
   props: {
     form: {
@@ -265,24 +255,23 @@ export default {
       for (let i = 0; i < numElementos; i++) {
 
         this.fields.forEach((field) => {
-            if (field.type === 'checkbox' && Object.values(data)[i] ===true) {
+          if (field.type === 'checkbox' && Object.values(data)[i] === true) {
 
-                 vetor[i] = parseInt(this.fields[i].preco)
-
-
-              }
-
-         })
+            vetor[i] = parseInt(this.fields[i].preco)
 
 
-        }
+          }
+
+        })
+
+
+      }
 
       const total = vetor.reduce((acumulador, numero) => acumulador + numero, 0);
 
-      console.log(total);
 
 
-         return total
+      return total
 
     },
 
@@ -300,22 +289,102 @@ export default {
       for (let i = 0; i < numElementos; i++) {
 
         this.fields.forEach((field) => {
-            if (field.type === 'checkbox' && Object.values(data)[i] ===true) {
+          if (field.type === 'checkbox' && Object.values(data)[i] === true) {
 
-                 vetor[i] = this.fields[i].name
-
-
-              }
-
-         })
+            vetor[i] = this.fields[i].name
 
 
-        }
+          }
+
+        })
+
+
+      }
+
+      return vetor
+
+    },
+
+
+
+    distancia() {
+      const apiKey = "5b3ce3597851110001cf6248dcc966bdc7f64ea1957e19d41c1ba025";
+      let origin
+      let destination
+
+      let coordenadasorigem
+      let coordenadasdestino
+      const requestUrl = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=5b3ce3597851110001cf6248dcc966bdc7f64ea1957e19d41c1ba025&start=-8.6291,41.1579&end=-9.1393,38.7223`;
+
+      const data = this.dataForm.data()
+
+
+      const numElementos = Object.keys(data).length;
+
+      for (let i = 0; i < numElementos; i++) {
+
+        this.fields.forEach((field) => {
+
+          if (field.name === "Origem") {
+
+            origin = Object.values(data)[i]
+
+            const requestUrl = `https://nominatim.openstreetmap.org/search?q=${origin}&format=jsonv2&limit=1`;
+
+            fetch(requestUrl)
+              .then(response => response.json())
+              .then(data => {
+                if (data.length > 0) {
+                  coordenadasorigem = { lat: data[0].lat, lng: data[0].lon };
+                }
+              })
+              .catch(error => {
+                console.error(error);
+                console.log("Houve um erro ao tentar converter o endereço em coordenadas.");
+              });
+
+          }
+
+          if (field.name === "Destino") {
+
+            destination = Object.values(data)[i]
+
+            const requestUrl = `https://nominatim.openstreetmap.org/search?q=${destination}&format=jsonv2&limit=1`;
+
+            fetch(requestUrl)
+              .then(response => response.json())
+              .then(data => {
+                if (data.length > 0) {
+                  coordenadasdestino = { lat: data[0].lat, lng: data[0].lon };
+                }
+              })
+              .catch(error => {
+                console.error(error);
+                console.log("Houve um erro ao tentar converter o endereço em coordenadas.");
+              });
+          }
 
 
 
 
-         return vetor
+        })
+
+
+
+
+      }
+
+
+
+
+      fetch(requestUrl)
+        .then(response => response.json())
+        .then(data => {
+          const distanceInMeters = data.features[0].properties.segments[0].distance;
+          const distanceInKilometers = distanceInMeters / 1000;
+          window.alert(distanceInKilometers);
+        })
+        .catch(error => console.error(error));
 
     },
     isFieldRequired() {
@@ -447,11 +516,11 @@ export default {
             if (field.type === 'date' && field.prefill_today === true) { // For Prefill with 'today'
               const dateObj = new Date()
               let currentDate = dateObj.getFullYear() + '-' +
-                      String(dateObj.getMonth() + 1).padStart(2, '0') + '-' +
-                      String(dateObj.getDate()).padStart(2, '0')
-              if(field.with_time === true){
+                String(dateObj.getMonth() + 1).padStart(2, '0') + '-' +
+                String(dateObj.getDate()).padStart(2, '0')
+              if (field.with_time === true) {
                 currentDate += 'T' + String(dateObj.getHours()).padStart(2, '0') + ':' +
-                String(dateObj.getMinutes()).padStart(2, '0');
+                  String(dateObj.getMinutes()).padStart(2, '0');
               }
               pendingData[field.id] = currentDate
             }
@@ -491,9 +560,9 @@ export default {
           let currentDate = dateObj.getFullYear() + '-' +
             String(dateObj.getMonth() + 1).padStart(2, '0') + '-' +
             String(dateObj.getDate()).padStart(2, '0')
-          if(field.with_time === true){
+          if (field.with_time === true) {
             currentDate += 'T' + String(dateObj.getHours()).padStart(2, '0') + ':' +
-            String(dateObj.getMinutes()).padStart(2, '0')
+              String(dateObj.getMinutes()).padStart(2, '0')
           }
           formData[field.id] = currentDate
         } else { // Default prefill if any

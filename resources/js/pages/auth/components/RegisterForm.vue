@@ -2,28 +2,24 @@
   <div>
     <form @submit.prevent="register" @keydown="form.onKeydown($event)" class="mt-4">
       <!-- Name -->
-      <text-input name="name" :form="form" :label="$t('name')" placeholder="Your name" :required="true" />
+      <text-input name="name" :form="form" :label="$t('name')" placeholder="O seu nome" :required="true" />
 
       <!-- Email -->
-      <text-input name="email" :form="form" :label="$t('email')" :required="true" placeholder="Your email address" />
-
-      <select-input name="hear_about_us" :options="hearAboutUsOptions" :form="form" placeholder="Select option"
-                    label="How did you hear about us?" :required="true"
-      />
+      <text-input name="email" :form="form" :label="$t('email')" :required="true" placeholder="O seu endereço de email" />
 
       <!-- Password -->
-      <text-input native-type="password" placeholder="Enter password"
+      <text-input native-type="password" placeholder="A sua password"
                   name="password" :form="form" :label="$t('password')" :required="true"
       />
 
       <!-- Password Confirmation-->
-      <text-input native-type="password" :form="form" :required="true" placeholder="Enter confirm password"
+      <text-input native-type="password" :form="form" :required="true" placeholder="Confirmar password"
                   name="password_confirmation"  :label="$t('confirm_password')"
       />
 
       <checkbox-input :form="form" name="agree_terms" :required="true">
         <template #label>
-          I agree with the <router-link :to="{name:'terms-conditions'}" target="_blank">Terms and conditions</router-link> and <router-link :to="{name:'privacy-policy'}" target="_blank">Privacy policy</router-link> of the website and I accept them.
+          Eu concordo com os<router-link :to="{name:'terms-conditions'}" target="_blank">Termos e condições</router-link> e com a <router-link :to="{name:'privacy-policy'}" target="_blank">Politica de Privacidade</router-link> da plataforma e aceito-as.
         </template>
       </checkbox-input>
 
@@ -31,7 +27,7 @@
       <v-button :loading="form.busy">Create an account</v-button>
 
       <p class="text-gray-500 mt-4">
-        Already have an account?  
+        Já possui uma conta?
         <a href="#" v-if="isQuick" @click.prevent="$emit('openLogin')" class="font-semibold ml-1">Log In</a>
         <router-link v-else :to="{name:'login'}" class="font-semibold ml-1">Log In</router-link>
       </p>
@@ -111,7 +107,7 @@ export default {
 
         // Track event
         this.$logEvent('register', { source: this.form.hear_about_us })
-        
+
         initCrisp(data)
         this.$crisp.push(['set', 'session:event', [[['register', {}, 'blue']]]])
 

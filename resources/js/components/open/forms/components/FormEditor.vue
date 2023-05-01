@@ -14,7 +14,7 @@
           Retroceder
         </a>
         <h3 class="font-semibold text-lg">{{ form.title }}</h3>
-        <small v-if="isEdit" class="text-gray-500">Edited {{ form.last_edited_human }}</small>
+        <small v-if="isEdit" class="text-gray-500">Editado {{ form.last_edited_human }}</small>
       </div>
 
       <div class="p-4 border-b sticky top-0 z-10 bg-white">

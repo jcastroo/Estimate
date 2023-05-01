@@ -5,7 +5,6 @@
         <h1 class="sm:text-5xl">
           Privacy Policy
         </h1>
-        <notion-page page-id="9c97349ceda7455aab9b341d1ff70f79" />
       </div>
     </div>
     <open-form-footer />
@@ -20,7 +19,7 @@ export default {
   components: { OpenFormFooter},
   layout: 'default',
   mixins: [SeoMeta],
-  
+
   data: () => ({
     metaTitle: 'Privacy Policy',
   }),

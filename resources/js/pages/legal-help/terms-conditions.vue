@@ -6,7 +6,6 @@
         <h1 class="sm:text-5xl">
           Terms & Conditions
         </h1>
-        <notion-page page-id="246420da2834480ca04047b0c5a00929" />
       </div>
     </div>
     <open-form-footer />

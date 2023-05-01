@@ -56,40 +56,8 @@
 
       <more-features />
 
-
-
-
-
-
-
     </div>
 
-
-    <div class="w-full p-12 md:p-24 text-center">
-
-        <span class="hidden sm:inline-block sm:align-middle sm:" aria-hidden="true">​</span>
-        <div
-          class="w-full inline-block p-5 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-2xl lg:p-16 sm:my-8 sm:align-middle ">
-          <iframe style="border:none;width:100%;" height="1310px" src="http://127.0.0.1:8000/forms/questionario-livro-de-elogios"></iframe>
-
-        </div>
-
-
-    </div>
-
-
-
-    <div class="w-full p-12 md:p-24 text-center">
-
-        <span class="hidden sm:inline-block sm:align-middle sm:" aria-hidden="true">​</span>
-        <div
-          class="w-full inline-block p-5 overflow-hidden text-left align-bottom transition-all transform bg-white rounded-lg shadow-2xl lg:p-16 sm:my-8 sm:align-middle ">
-          <iframe style="border:none;width:100%;" height="960px" src="http://127.0.0.1:8000/forms/configurador-de-plataforma"></iframe>
-
-        </div>
-
-
-    </div>
 
 
     <div class="w-full bg-purple-500 p-12 md:p-24 text-center">
