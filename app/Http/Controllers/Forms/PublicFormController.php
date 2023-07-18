@@ -27,7 +27,7 @@ class PublicFormController extends Controller
         if ($form->workspace == null) {
             // Workspace deleted
             return $this->error([
-                'message' => 'Form not found.'
+                'message' => 'Form não encontrada.'
             ], 404);
         }
 
@@ -68,7 +68,7 @@ class PublicFormController extends Controller
         $path = FormController::ASSETS_UPLOAD_PATH.'/'.$assetFileName;
         if (!Storage::disk('s3')->exists($path)) {
             return $this->error([
-                'message' => 'File not found.',
+                'message' => 'Ficheiro não encontrado.',
                 'file_name' => $assetFileName
             ]);
         }
@@ -80,17 +80,28 @@ class PublicFormController extends Controller
     {
         $form = $request->form;
         $submissionId = false;
-
-        if ($form->editable_submissions) {
+        /*$formValidated=$request->validated();
+        $formValidated['distance']=null;
+        if ($form->editable_submissions) {*/
             $job = new StoreFormSubmissionJob($form, $request->validated());
             $job->handle();
             $submissionId = Hashids::encode($job->getSubmissionId());
-        }else{
-            StoreFormSubmissionJob::dispatch($form, $request->validated());
-        }
+            $lastSubmission = FormSubmission::where(['id'=>$job->getSubmissionId()])->first();
+            $data = $lastSubmission->data;
 
+            $data['distance']= $request->distance;
+            $data['origin']= $request->origin;
+            $data['destination']= $request->destination;
+
+            $data = json_encode($data);
+            FormSubmission::where(['id'=>$lastSubmission->id])->update([
+                'data'=>$data
+            ]);
+        /*}else{
+            $submissionId = StoreFormSubmissionJob::dispatch($form, $request->validated());
+        }*/
         return $this->success(array_merge([
-            'message' => 'Form submission saved.',
+            'message' => 'Submissão da form guardado com sucesso.',
             'submission_id' => $submissionId
         ], $request->form->is_pro && $request->form->redirect_url ? [
             'redirect' => true,
@@ -107,7 +118,7 @@ class PublicFormController extends Controller
         $form = Form::whereSlug($slug)->whereVisibility('public')->firstOrFail();
         if ($form->workspace == null || !$form->editable_submissions || !$submissionId) {
             return $this->error([
-                'message' => 'Not allowed.',
+                'message' => 'Não Permitido.',
             ]);
         }
 
@@ -115,7 +126,7 @@ class PublicFormController extends Controller
 
         if ($submission->form_id != $form->id) {
             return $this->error([
-                'message' => 'Not allowed.',
+                'message' => 'Não Permitido.',
             ], 403);
         }
 

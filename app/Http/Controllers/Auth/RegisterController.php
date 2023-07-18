@@ -53,10 +53,10 @@ class RegisterController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email:filter|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'hear_about_us' => 'required|string',
+            'hear_about_us' => 'string',
             'agree_terms' => ['required',Rule::in([true])]
         ],[
-            'agree_terms' => 'Please agree with the terms and conditions.'
+            'agree_terms' => 'Necessário concordar com os Termos e Condições'
         ]);
     }
 
@@ -77,7 +77,6 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => strtolower($data['email']),
             'password' => bcrypt($data['password']),
-            'hear_about_us' => $data['hear_about_us']
         ]);
 
         // Add relation with user

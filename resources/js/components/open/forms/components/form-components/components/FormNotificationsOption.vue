@@ -13,7 +13,7 @@
           />
         </svg>
         <p class="flex-grow text-center">
-          Email Notifications
+          Notificações por E-mail
         </p>
       </div>
       <div v-if="form.notifies">
@@ -28,7 +28,7 @@
     </button>
     <modal :show="showModal" @close="showModal=false">
       <h2 class="text-2xl font-bold z-10 truncate mb-5 text-nt-blue">
-        Form Notifications
+        Notificações de Formulário
         <pro-tag />
       </h2>
       <toggle-switch-input name="notifies" :form="form" class="mt-4"

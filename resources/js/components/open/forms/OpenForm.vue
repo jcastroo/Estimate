@@ -14,6 +14,7 @@
             <template v-else>
               <div v-if="field.type === 'nf-text' && field.content" :id="field.id" :key="field.id"
                 class="nf-text w-full px-2 mb-3" v-html="field.content" />
+
               <div v-if="field.type === 'nf-code' && field.content" :id="field.id" :key="field.id"
                 class="nf-code w-full px-2 mb-3" v-html="field.content" />
               <div v-if="field.type === 'nf-divider'" :id="field.id" :key="field.id" class="border-b my-4 w-full mx-2" />
@@ -40,6 +41,30 @@
     </template>
 
     <template>
+
+      <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+        <div>
+          <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">Origem </label>
+          <div class="mt-2.5">
+            <input type="text" name="origin" id="first-name" autocomplete="given-name"
+              class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              v-model="origem" placeholder="Origem">
+          </div>
+        </div>
+        <div>
+          <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Destino</label>
+          <div class="mt-2.5">
+            <input type="text" name="destination" id="last-name" autocomplete="family-name"
+              class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              v-model="destino" placeholder="Destino">
+          </div>
+
+
+        </div>
+
+
+      </div>
+
       <div class="relative w-full h-full">
         <div class="absolute hidden w-full lg:block h-96"></div>
         <div class="relative px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
@@ -52,49 +77,46 @@
                     Estimativa
                   </p>
                   <div class="flex items-center justify-center">
-                    <p class="mr-2 text-5xl font-semibold text-white lg:text-6xl">
-                      {{ totalPreco }} €
+                    <input type="hidden" name="distance" :value="distancia">
+                    <p class="text-xl font-medium tracking-wide text-white">
+                      {{ distance }}
                     </p>
+                    <p class="text-xl font-medium tracking-wide text-white">
+                      {{ distancia }}
+                    </p>
+                    <div>
+
+
+                    </div>
                     <p class="text-lg text-gray-500"></p>
                   </div>
                 </div>
-                <ul class="mb-8 space-y-2">
-                  <li class="flex items-center">
-                    <p class="font-medium text-gray-300"> {{ funcionalidades }}</p>
-                  </li>
-                  <li class="flex items-center">
-                    <p class="font-medium text-gray-300"> Distancia Total: {{ distancia }} km</p>
-                  </li>
 
-                </ul>
 
               </div>
               <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75"></div>
               <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50"></div>
               <div class="w-9/12 h-2 mx-auto bg-gray-900 rounded-b opacity-25"></div>
             </div>
+            <div class="flex flex-wrap justify-center w-full">
+              <open-form-button v-if="currentFieldGroupIndex > 0 && previousFieldsPageBreak && !loading"
+                native-type="button" :color="form.color" :theme="theme" class="mt-2 px-8 mx-1" @click="previousPage">
+                {{ previousFieldsPageBreak.previous_btn_text }}
+              </open-form-button>
 
+              <slot v-if="isLastPage" name="submit-btn" :submitForm="submitForm" />
+              <open-form-button v-else native-type="button" :color="form.color" :theme="theme" class="mt-2 px-8 mx-1"
+                @click="nextPage">
+                {{ currentFieldsPageBreak.next_btn_text }}
+              </open-form-button>
+              <div v-if="!currentFieldsPageBreak && !isLastPage">
+                Something is wrong with this form structure. If you're the form owner please contact us.
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </template>
 
-    <!--  Submit, Next and previous buttons  -->
-    <div class="flex flex-wrap justify-center w-full">
-      <open-form-button v-if="currentFieldGroupIndex > 0 && previousFieldsPageBreak && !loading" native-type="button"
-        :color="form.color" :theme="theme" class="mt-2 px-8 mx-1" @click="previousPage">
-        {{ previousFieldsPageBreak.previous_btn_text }}
-      </open-form-button>
-
-      <slot v-if="isLastPage" name="submit-btn" :submitForm="submitForm" />
-      <open-form-button v-else native-type="button" :color="form.color" :theme="theme" class="mt-2 px-8 mx-1"
-        @click="nextPage">
-        {{ currentFieldsPageBreak.next_btn_text }}
-      </open-form-button>
-      <div v-if="!currentFieldsPageBreak && !isLastPage">
-        Something is wrong with this form structure. If you're the form owner please contact us.
       </div>
-    </div>
   </form>
 </template>
 
@@ -138,6 +160,11 @@ export default {
     return {
       dataForm: null,
       currentFieldGroupIndex: 0,
+      origem: '',
+      destino: '',
+      distancia: '',
+
+
 
       /**
        * Used to force refresh components by changing their keys
@@ -219,6 +246,7 @@ export default {
     dataFormValue() {
       // For get values instead of Id for select/multi select options
       const data = this.dataForm.data()
+      console.log(data)
       const selectionFields = this.fields.filter((field) => {
         return ['select', 'multi_select'].includes(field.type)
       })
@@ -305,88 +333,74 @@ export default {
 
     },
 
+    distance() {
+      const apiKey = 'AIzaSyAQVYZsPBTAUB-XIzTS6Ou6lOR8YYB3-p8';
 
 
-    distancia() {
-      const apiKey = "5b3ce3597851110001cf6248dcc966bdc7f64ea1957e19d41c1ba025";
-      let origin
-      let destination
-
-      let coordenadasorigem
-      let coordenadasdestino
-      const requestUrl = `https://api.openrouteservice.org/v2/directions/driving-car?api_key=5b3ce3597851110001cf6248dcc966bdc7f64ea1957e19d41c1ba025&start=-8.6291,41.1579&end=-9.1393,38.7223`;
-
-      const data = this.dataForm.data()
+      const origin = this.origem;
+      const destination = this.destino;
 
 
-      const numElementos = Object.keys(data).length;
+      if (origin && destination) {
+        const geocodeOriginUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(origin)}&key=${apiKey}`;
+        const geocodeDestinationUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(destination)}&key=${apiKey}`;
+        Promise.all([fetch(geocodeOriginUrl), fetch(geocodeDestinationUrl)])
+          .then(responses => Promise.all(responses.map(response => response.json())))
+          .then(data => {
+            let originCoords = {
+              lat: 0.000000,
+              lng: 0.000000
+            }
 
-      for (let i = 0; i < numElementos; i++) {
+            let destinationCoords = {
+              lat: 0.000001,
+              lng: 0.0000
+            }
+            if(!(!data[0] || !data[0].results[0] || !data[1] || !data[1].results[0])){
+              originCoords = data[0].results[0].geometry.location;
+              destinationCoords = data[1].results[0].geometry.location;
+            }
 
-        this.fields.forEach((field) => {
+            console.log(destinationCoords);
+            const distanceUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${originCoords.lat},${originCoords.lng}&destinations=${destinationCoords.lat},${destinationCoords.lng}&key=${apiKey}`;
 
-          if (field.name === "Origem") {
+            return fetch(distanceUrl);
+          })
+          .then(response => response.json())
+          .then(data => {
+            console.log(1)
+            if (data.rows.length < 1 || data.rows[0].elements.length < 1 || !data.rows[0].elements[0].distance || !data.rows[0].elements[0].distance.text) {
+              this.distancia = 0;
+            }
+            else{
+              const distance = data.rows[0].elements[0].distance.text;
+              this.distancia = distance;
 
-            origin = Object.values(data)[i]
+              
+            }
 
-            const requestUrl = `https://nominatim.openstreetmap.org/search?q=${origin}&format=jsonv2&limit=1`;
-
-            fetch(requestUrl)
-              .then(response => response.json())
-              .then(data => {
-                if (data.length > 0) {
-                  coordenadasorigem = { lat: data[0].lat, lng: data[0].lon };
-                }
-              })
-              .catch(error => {
-                console.error(error);
-                console.log("Houve um erro ao tentar converter o endereço em coordenadas.");
-              });
-
-          }
-
-          if (field.name === "Destino") {
-
-            destination = Object.values(data)[i]
-
-            const requestUrl = `https://nominatim.openstreetmap.org/search?q=${destination}&format=jsonv2&limit=1`;
-
-            fetch(requestUrl)
-              .then(response => response.json())
-              .then(data => {
-                if (data.length > 0) {
-                  coordenadasdestino = { lat: data[0].lat, lng: data[0].lon };
-                }
-              })
-              .catch(error => {
-                console.error(error);
-                console.log("Houve um erro ao tentar converter o endereço em coordenadas.");
-              });
-          }
-
-
-
-
-        })
-
-
-
-
+          });
       }
 
 
 
-
-      fetch(requestUrl)
-        .then(response => response.json())
-        .then(data => {
-          const distanceInMeters = data.features[0].properties.segments[0].distance;
-          const distanceInKilometers = distanceInMeters / 1000;
-          window.alert(distanceInKilometers);
-        })
-        .catch(error => console.error(error));
-
     },
+
+
+
+
+    calcularDistancia() {
+      distance()
+        .then(distanceValue => {
+          console.log('Distância:', distanceValue);
+        })
+        .catch(error => {
+          console.error('Ocorreu um erro ao calcular a distância:', error);
+        });
+    },
+
+
+
     isFieldRequired() {
       const fieldsRequired = {}
       this.fields.forEach((field) => {
@@ -451,6 +465,10 @@ export default {
         this.dataForm.submission_id = this.form.submission_id
       }
 
+        this.dataForm.distance = this.distancia;
+
+
+
       this.$emit('submit', this.dataForm, this.onSubmissionFailure)
     },
     /**
@@ -482,14 +500,21 @@ export default {
         })
       }
     },
-    async getSubmissionData() {
+    async getSubmissionData(distance) {
       if (!this.form || !this.form.editable_submissions || !this.form.submission_id) { return null }
+
+      const submissionData = {
+        submission_id: this.form.submission_id,
+        distance: distance, // Adicione a distância aos dados da submissão
+      };
+
       await this.$store.dispatch('open/records/loadRecord',
-        axios.get('/api/forms/' + this.form.slug + '/submissions/' + this.form.submission_id).then((response) => {
+        axios.post('/api/backoffice/endpoint', submissionData).then((response) => {
           return { submission_id: this.form.submission_id, ...response.data.data }
         })
-      )
-      return this.$store.getters['open/records/getById'](this.form.submission_id)
+      );
+
+      return this.$store.getters['open/records/getById'](this.form.submission_id);
     },
     async initForm() {
       if (this.isPublicFormPage && this.form.editable_submissions) {
@@ -684,5 +709,4 @@ export default {
   ul {
     @apply list-disc list-inside;
   }
-}
-</style>
+}</style>

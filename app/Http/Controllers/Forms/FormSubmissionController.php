@@ -59,7 +59,7 @@ class FormSubmissionController extends Controller
 
         if (!Storage::disk('s3')->exists($fileName)) {
             return $this->error([
-                'message' => 'File not found.',
+                'message' => 'Ficheiro não encontrado.',
             ], 404);
         }
 

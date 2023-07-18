@@ -19,12 +19,12 @@
 
       <checkbox-input :form="form" name="agree_terms" :required="true">
         <template #label>
-          Eu concordo com os<router-link :to="{name:'terms-conditions'}" target="_blank">Termos e condições</router-link> e com a <router-link :to="{name:'privacy-policy'}" target="_blank">Politica de Privacidade</router-link> da plataforma e aceito-as.
+          Eu concordo com os <router-link :to="{name:'terms-conditions'}" target="_blank">Termos e condições</router-link> e com a <router-link :to="{name:'privacy-policy'}" target="_blank">Politica de Privacidade</router-link> da plataforma e aceito-as.
         </template>
       </checkbox-input>
 
       <!-- Submit Button -->
-      <v-button :loading="form.busy">Create an account</v-button>
+      <v-button :loading="form.busy">Criar Conta</v-button>
 
       <p class="text-gray-500 mt-4">
         Já possui uma conta?

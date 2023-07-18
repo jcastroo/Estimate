@@ -78,7 +78,6 @@ class FormController extends Controller
 
         $workspace = Workspace::findOrFail($request->get('workspace_id'));
         $this->authorize('view', $workspace);
-
         $formData = $this->formCleaner
             ->processRequest($request)
             ->simulateCleaning($workspace)
@@ -89,7 +88,7 @@ class FormController extends Controller
         ]));
 
         return $this->success([
-            'message' => $this->formCleaner->hasCleaned() ? 'Form successfully created, but the Pro features you used will be disabled when sharing your form:' : 'Form created.',
+            'message' => $this->formCleaner->hasCleaned() ? 'Formulário criado com sucesso:' : 'Formulário criado.',
             'form_cleaning' => $this->formCleaner->getPerformedCleanings(),
             'form' => new FormResource($form),
             'users_first_form' => $request->user()->forms()->count() == 1
@@ -107,14 +106,14 @@ class FormController extends Controller
             ->getData();
 
         // Set Removed Properties
-        $formData['removed_properties'] = array_merge($form->removed_properties, collect($form->properties)->filter(function ($field) use ($formData) {
+        $formData['removed_properties'] = array_merge((array)$form->removed_properties, collect($form->properties)->filter(function ($field) use ($formData) {
             return (!Str::of($field['type'])->startsWith('nf-') && !in_array($field['id'], collect($formData['properties'])->pluck("id")->toArray()));
         })->toArray());
 
         $form->update($formData);
 
         return $this->success([
-            'message' => $this->formCleaner->hasCleaned() ? 'Form successfully updated, but the Pro features you used will be disabled when sharing your form:' : 'Form updated.',
+            'message' => $this->formCleaner->hasCleaned() ? 'Formulário atualizado com sucesso:' : 'Formulário atualizado.',
             'form_cleaning' => $this->formCleaner->getPerformedCleanings(),
             'form' => new FormResource($form)
         ]);
@@ -127,7 +126,7 @@ class FormController extends Controller
 
         $form->delete();
         return $this->success([
-            'message' => 'Form was deleted.'
+            'message' => 'O formulário foi excluído.'
         ]);
     }
 
@@ -138,11 +137,11 @@ class FormController extends Controller
 
         // Create copy
         $formCopy = $form->replicate();
-        $formCopy->title = 'Copy of '.$formCopy->title;
+        $formCopy->title = 'Cópia de '.$formCopy->title;
         $formCopy->save();
 
         return $this->success([
-            'message' => 'Form successfully duplicated.',
+            'message' => 'Formulário duplicado com sucesso.',
             'new_form' => new FormResource($formCopy)
         ]);
     }
@@ -160,7 +159,7 @@ class FormController extends Controller
         $form->save();
 
         return $this->success([
-            'message' => 'Form url successfully updated. Your new form url now is: '.$form->share_url.'.',
+            'message' => 'Formulário atualizado com sucesso. O seu novo URL para o formulário é: '.$form->share_url.'.',
             'form' => new FormResource($form)
         ]);
     }
@@ -184,7 +183,7 @@ class FormController extends Controller
         Storage::disk('s3')->move($fileName, $newPath);
 
         return $this->success([
-            'message' => 'File uploaded.',
+            'message' => 'Ficheiro enviado com sucesso.',
             'url' => route("forms.assets.show", [$fileNameParser->getMovedFileName()])
         ]);
     }

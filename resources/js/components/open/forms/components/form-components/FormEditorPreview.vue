@@ -57,7 +57,6 @@
                             @submitted="previewFormSubmitted=true"
       />
     </div>
-    <p v-if="creating" class=" w-full mt-2 font-normal text-center text-gray-400">Answers won't really be saved</p>
   </div>
 </template>
 

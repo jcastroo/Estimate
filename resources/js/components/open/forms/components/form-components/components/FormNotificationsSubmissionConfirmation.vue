@@ -9,7 +9,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
         </svg>
         <p class="flex-grow text-center">
-          Send submission confirmation
+          Enviar Confirmação de Submissão
         </p>
       </div>
       <div v-if="form.send_submission_confirmation">
@@ -24,7 +24,7 @@
     </button>
     <modal :show="showModal" @close="showModal=false">
       <h2 class="text-2xl font-bold z-10 truncate mb-5 text-nt-blue">
-        Submission confirmation
+        Confirmação de Submissão
         <pro-tag />
       </h2>
       <toggle-switch-input :disabled="emailSubmissionConfirmationField===null" name="send_submission_confirmation"

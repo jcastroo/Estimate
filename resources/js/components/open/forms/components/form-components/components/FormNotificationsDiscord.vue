@@ -7,7 +7,7 @@
       <div class="flex-grow flex items-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 inline" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M9 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M15 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path d="M7.5 7.5c3.5 -1 5.5 -1 9 0"></path><path d="M7 16.5c3.5 1 6.5 1 10 0"></path><path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5"></path><path d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5"></path></svg>
         <p class="flex-grow text-center">
-          Discord Notifications
+          Notificações do Discord
         </p>
       </div>
       <div v-if="form.notifies_discord">
@@ -22,7 +22,7 @@
     </button>
     <modal :show="showModal" @close="showModal=false">
       <h2 class="text-2xl font-bold z-10 truncate mb-5 text-nt-blue">
-        Discord Notifications
+        Notificações do Discord
         <pro-tag />
       </h2>
       <toggle-switch-input name="notifies_discord" :form="form" class="mt-4"
@@ -32,8 +32,8 @@
                   label="Discord webhook url" help="help"
       >
         <template #help>
-          Receive a discord message on each form submission.
-          <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank">Click here</a> to learn how to get a discord webhook url.
+          Receba uma mensagem no Discord a cada submissão feita.
+          <a href="https://support.discord.com/hc/en-us/articles/228383668-Intro-to-Webhooks" target="_blank">Clique aqui</a> para aprender a como obter uma URL de webhook do Discord..
         </template>
       </text-input>
     </modal>

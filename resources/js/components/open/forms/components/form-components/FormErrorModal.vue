@@ -2,7 +2,7 @@
   <modal :show="show" @close="$emit('close')">
     <div class="-mx-5">
       <h2 class="text-red-400 text-2xl font-bold mb-4 px-4">
-        Error saving your form
+        Erro ao guardar o seu formulário.
       </h2>
 
       <div v-if="validationErrorResponse" class="p-4 border-b border-t">
@@ -16,7 +16,7 @@
 
       <div class="px-4 pt-4 text-right">
         <v-button color="gray" shade="light" @click="$emit('close')">
-          Close
+          Fechar
         </v-button>
       </div>
     </div>

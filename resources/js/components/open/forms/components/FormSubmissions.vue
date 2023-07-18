@@ -162,6 +162,7 @@ export default {
       axios.get('/api/open/forms/' + this.form.id + '/submissions?page=' + this.currentPage).then((response) => {
         const resData = response.data
 
+        console.log(resData);
         this.tableData = this.tableData.concat(resData.data.map((record) => record.data))
 
         if (this.currentPage < resData.meta.last_page) {

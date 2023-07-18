@@ -10,7 +10,7 @@
             stroke="currentColor" stroke-width="1.67" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
 
-        About Submissions
+        Sobre Submissões
       </h3>
     </template>
 

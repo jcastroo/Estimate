@@ -53,7 +53,7 @@ class FormSubmissionNotification extends Notification implements ShouldQueue
         return (new MailMessage)
             ->replyTo($notifiable->routes['mail'])
             ->from($this->getFromEmail(), config('app.name'))
-            ->subject('New form submission for "'.$this->event->form->title.'"')
+            ->subject('Nova submissão na form: "'.$this->event->form->title.'"')
             ->markdown('mail.form.submission-notification', [
                 'fields' => $formatter->getFieldsWithValue(),
                 'form' => $this->event->form,
