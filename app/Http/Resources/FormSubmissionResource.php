@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use data;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class FormSubmissionResource extends JsonResource
@@ -17,11 +18,11 @@ class FormSubmissionResource extends JsonResource
     {
         $this->generateFileLinks();
         $this->addTimestamp();
-
         return [
             'data' => $this->data,
             'form_id' => $this->form_id,
             'id' => $this->id,
+
         ];
     }
 

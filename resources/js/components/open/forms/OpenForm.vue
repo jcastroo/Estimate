@@ -84,6 +84,8 @@
                     <p class="text-xl font-medium tracking-wide text-white">
                       {{ distancia }}
                     </p>
+                    <br>
+
                     <div>
 
 
@@ -375,8 +377,8 @@ export default {
             else{
               const distance = data.rows[0].elements[0].distance.text;
               this.distancia = distance;
-
-              
+              this.origem = origin;
+              this.destino = destination;
             }
 
           });
@@ -466,6 +468,9 @@ export default {
       }
 
         this.dataForm.distance = this.distancia;
+        this.dataForm.origin = this.origem;
+        this.dataForm.destination = this.destino;
+
 
 
 

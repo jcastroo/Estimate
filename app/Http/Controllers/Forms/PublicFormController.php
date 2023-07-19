@@ -89,6 +89,7 @@ class PublicFormController extends Controller
             $lastSubmission = FormSubmission::where(['id'=>$job->getSubmissionId()])->first();
             $data = $lastSubmission->data;
 
+
             $data['distance']= $request->distance;
             $data['origin']= $request->origin;
             $data['destination']= $request->destination;

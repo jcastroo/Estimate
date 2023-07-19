@@ -54,6 +54,7 @@
           :loading="isLoading"
           @resize="dataChanged()"
         >
+
         </open-table>
       </scroll-shadow>
     </div>
@@ -130,12 +131,36 @@ export default {
       if (!hasCreatedAt) {
         // Add a "created at" column
         const columns = clonedeep(this.form.properties)
+
+        columns.push({
+          "name": "Origem",
+          "id": "origin",
+          "type": "text",
+          "width": 140,
+        })
+
+        columns.push({
+          "name": "Destino",
+          "id": "destination",
+          "type": "text",
+          "width": 140,
+        })
+        columns.push({
+          "name": "Distancia",
+          "id": "distance",
+          "type": "text",
+          "width": 140,
+        })
+
         columns.push({
           "name": "Created at",
           "id": "created_at",
           "type": "date",
           "width": 140,
         })
+
+
+
         this.$set(this.form, 'properties', columns)
       }
       this.formInitDone = true
@@ -160,10 +185,8 @@ export default {
       }
       this.isLoading = true
       axios.get('/api/open/forms/' + this.form.id + '/submissions?page=' + this.currentPage).then((response) => {
-        const resData = response.data
-
-        console.log(resData);
-        this.tableData = this.tableData.concat(resData.data.map((record) => record.data))
+        const resData = response.data;
+        this.tableData = this.tableData.concat(resData.data.map((record) => record.data));
 
         if (this.currentPage < resData.meta.last_page) {
           this.currentPage += 1
