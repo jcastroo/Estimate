@@ -10,7 +10,7 @@
             >
               {{ appName }}</span><span
             class="bg-gray-100 text-gray-600 font-semibold inline-block ml-1 px-2 rounded-full text-black text-xs tracking-wider"
-          >ALPHA</span>
+          >BETA</span>
           </router-link>
           <workspace-dropdown class="ml-6"/>
         </div>
