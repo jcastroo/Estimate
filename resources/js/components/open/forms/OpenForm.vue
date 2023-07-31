@@ -344,8 +344,8 @@ export default {
 
 
       if (origin && destination) {
-        const geocodeOriginUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(origin)}&key=${apiKey}`;
-        const geocodeDestinationUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(destination)}&key=${apiKey}`;
+        const geocodeOriginUrl = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(origin)}&key=${apiKey}`;
+        const geocodeDestinationUrl = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(destination)}&key=${apiKey}`;
         Promise.all([fetch(geocodeOriginUrl), fetch(geocodeDestinationUrl)])
           .then(responses => Promise.all(responses.map(response => response.json())))
           .then(data => {
@@ -364,7 +364,7 @@ export default {
             }
 
             console.log(destinationCoords);
-            const distanceUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${originCoords.lat},${originCoords.lng}&destinations=${destinationCoords.lat},${destinationCoords.lng}&key=${apiKey}`;
+            const distanceUrl = `https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/distancematrix/json?origins=${originCoords.lat},${originCoords.lng}&destinations=${destinationCoords.lat},${destinationCoords.lng}&key=${apiKey}`;
 
             return fetch(distanceUrl);
           })
