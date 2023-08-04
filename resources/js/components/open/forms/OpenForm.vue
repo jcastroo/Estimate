@@ -357,8 +357,8 @@ export default {
               originCoords = data[0].results[0].geometry.location;
               destinationCoords = data[1].results[0].geometry.location;
             }
-
-            const distanceUrl = `http://127.0.0.1:8000/calculate-distance?fromLat=${originCoords.lat}&fromLong=${originCoords.lng}&toLat=${destinationCoords.lat}&toLong=${destinationCoords.lng}&customKey=something`;
+            const distanceMatrix = document.getElementById('meta-distance-matrix').getAttribute('content')
+            const distanceUrl = `${distanceMatrix}?fromLat=${originCoords.lat}&fromLong=${originCoords.lng}&toLat=${destinationCoords.lat}&toLong=${destinationCoords.lng}&customKey=something`;
 
             return fetch(distanceUrl);
           })
