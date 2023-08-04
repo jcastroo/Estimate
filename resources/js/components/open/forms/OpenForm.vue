@@ -59,8 +59,11 @@
               v-model="destino" placeholder="Destino">
           </div>
 
-
         </div>
+
+        <open-form-button
+                native-type="button" :color="form.color" :theme="theme" class="mt-2 px-8 mx-1" @click="distance">Calcular Distancia
+              </open-form-button>
 
 
       </div>
@@ -78,16 +81,14 @@
                   </p>
                   <div class="flex items-center justify-center">
                     <input type="hidden" name="distance" :value="distancia">
-                    <p class="text-xl font-medium tracking-wide text-white">
-                      {{ distance }}
-                    </p>
-                    <p class="text-xl font-medium tracking-wide text-white">
-                      {{ distancia }}
-                    </p>
+
+
                       <br>
                      <div>
                     </div>
-                    <p class="text-lg text-gray-500"></p>
+                    <p class="text-lg font-medium tracking-wide text-white">
+                      {{ distancia }}
+                  </p>
                   </div>
                 </div>
               </div>
@@ -159,7 +160,7 @@ export default {
       currentFieldGroupIndex: 0,
       origem: '',
       destino: '',
-      distancia: '',
+      distancia: '0',
 
 
 
@@ -330,58 +331,6 @@ export default {
 
     },
 
-    distance() {
-      const apiKey = 'AIzaSyAQVYZsPBTAUB-XIzTS6Ou6lOR8YYB3-p8';
-
-
-      const origin = this.origem;
-      const destination = this.destino;
-
-
-      if (origin && destination) {
-        const geocodeOriginUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(origin)}&key=${apiKey}`;
-        const geocodeDestinationUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(destination)}&key=${apiKey}`;
-        Promise.all([fetch(geocodeOriginUrl), fetch(geocodeDestinationUrl)])
-          .then(responses => Promise.all(responses.map(response => response.json())))
-          .then(data => {
-            let originCoords = {
-              lat: 0.000000,
-              lng: 0.000000
-            }
-
-            let destinationCoords = {
-              lat: 0.000001,
-              lng: 0.0000
-            }
-            if(!(!data[0] || !data[0].results[0] || !data[1] || !data[1].results[0])){
-              originCoords = data[0].results[0].geometry.location;
-              destinationCoords = data[1].results[0].geometry.location;
-            }
-            const distanceMatrix = document.getElementById('meta-distance-matrix').getAttribute('content')
-            const distanceUrl = `${distanceMatrix}?fromLat=${originCoords.lat}&fromLong=${originCoords.lng}&toLat=${destinationCoords.lat}&toLong=${destinationCoords.lng}&customKey=something`;
-
-            return fetch(distanceUrl);
-          })
-          .then(response => response.json())
-          .then(data => {
-            console.log(1)
-            if (data.rows.length < 1 || data.rows[0].elements.length < 1 || !data.rows[0].elements[0].distance || !data.rows[0].elements[0].distance.text) {
-              this.distancia = 0;
-            }
-            else{
-              const distance = data.rows[0].elements[0].distance.text;
-              this.distancia = distance;
-              this.origem = origin;
-              this.destino = destination;
-            }
-
-          });
-      }
-
-
-
-    },
-
 
 
 
@@ -447,6 +396,58 @@ export default {
   },
 
   methods: {
+
+
+    distance() {
+      const apiKey = 'AIzaSyAQVYZsPBTAUB-XIzTS6Ou6lOR8YYB3-p8';
+
+
+      const origin = this.origem;
+      const destination = this.destino;
+
+
+      if (origin && destination) {
+        const geocodeOriginUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(origin)}&key=${apiKey}`;
+        const geocodeDestinationUrl = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(destination)}&key=${apiKey}`;
+        Promise.all([fetch(geocodeOriginUrl), fetch(geocodeDestinationUrl)])
+          .then(responses => Promise.all(responses.map(response => response.json())))
+          .then(data => {
+            let originCoords = {
+              lat: 0.000000,
+              lng: 0.000000
+            }
+
+            let destinationCoords = {
+              lat: 0.000001,
+              lng: 0.0000
+            }
+            if(!(!data[0] || !data[0].results[0] || !data[1] || !data[1].results[0])){
+              originCoords = data[0].results[0].geometry.location;
+              destinationCoords = data[1].results[0].geometry.location;
+            }
+            const distanceMatrix = document.getElementById('meta-distance-matrix').getAttribute('content')
+            const distanceUrl = `${distanceMatrix}?fromLat=${originCoords.lat}&fromLong=${originCoords.lng}&toLat=${destinationCoords.lat}&toLong=${destinationCoords.lng}&customKey=something`;
+
+            return fetch(distanceUrl);
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.rows.length < 1 || data.rows[0].elements.length < 1 || !data.rows[0].elements[0].distance || !data.rows[0].elements[0].distance.text) {
+              this.distancia = 0;
+            }
+            else{
+              const distance = data.rows[0].elements[0].distance.text;
+              this.distancia = distance;
+              this.origem = origin;
+              this.destino = destination;
+            }
+
+          });
+      }
+
+
+
+    },
     submitForm() {
       if (this.currentFieldGroupIndex !== this.fieldGroups.length - 1) {
         return
