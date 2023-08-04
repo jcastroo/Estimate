@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DistanceCalculator;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,5 @@ Route::post(
 Route::get('/sitemap.xml', [\App\Http\Controllers\SitemapController::class, 'getSitemap'])->name('sitemap');
 
 
+
+Route::get('/calculate-distance', [DistanceCalculator::class, 'distanceMatrix'])->name('distanceMatrix');

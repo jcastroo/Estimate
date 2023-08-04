@@ -90,8 +90,6 @@
                     <p class="text-lg text-gray-500"></p>
                   </div>
                 </div>
-
-
               </div>
               <div class="w-11/12 h-2 mx-auto bg-gray-900 rounded-b opacity-75"></div>
               <div class="w-10/12 h-2 mx-auto bg-gray-900 rounded-b opacity-50"></div>
@@ -360,8 +358,7 @@ export default {
               destinationCoords = data[1].results[0].geometry.location;
             }
 
-            console.log(destinationCoords);
-            const distanceUrl = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${originCoords.lat},${originCoords.lng}&destinations=${destinationCoords.lat},${destinationCoords.lng}&key=${apiKey}`;
+            const distanceUrl = `http://127.0.0.1:8000/calculate-distance?fromLat=${originCoords.lat}&fromLong=${originCoords.lng}&toLat=${destinationCoords.lat}&toLong=${destinationCoords.lng}&customKey=something`;
 
             return fetch(distanceUrl);
           })
